@@ -9,7 +9,7 @@ export const marketingJobs: Job[] = [
     location: 'Menlo Park, CA (in-office, so you can experience the campus everyone is leaving)',
     salary: "$150,000 - $260,000 + RSUs (which fund themselves through the ads you'll be running)",
     type: 'Full-time',
-    postedDate: '2024-02-08',
+    postedDate: '2026-02-08',
     description:
       "Drive user acquisition for a platform that already has 3 billion users. Your job is to find the remaining 5 billion humans (and several billion bots) who haven't signed up yet. You'll run campaigns across our own ad platform (convenient) and optimize funnels that convert 'skeptical internet user' into 'daily active user who argues with strangers.' Success is measured in DAUs, not in whether those DAUs are happy.",
     requirements: [
@@ -53,7 +53,7 @@ Meta Marketing Recruiting
     location: 'Mountain View, CA or New York, NY (where the creatives are)',
     salary: '$165,000 - $280,000 + a Pixel phone (finally, a perk)',
     type: 'Full-time',
-    postedDate: '2024-01-14',
+    postedDate: '2026-01-14',
     description:
       "Lead brand marketing for Google Pixel — the phone that reviewers love but nobody buys. You'll craft campaigns that convince consumers to switch from iPhones they've had since 2014, compete for ad spend against a company with 10x our phone market share, and find creative ways to say 'our camera is better' for the 7th consecutive year. Bonus: you'll also need to explain why we killed the Pixel tablet.",
     requirements: [
@@ -94,7 +94,7 @@ Google Hardware Marketing Team`,
       "Austin, TX (in-office — the CEO doesn't believe in remote work or marketing departments)",
     salary: '$120,000 - $200,000 (we eliminated the marketing budget, but we kept the job listing)',
     type: 'Full-time',
-    postedDate: '2024-02-16',
+    postedDate: '2026-02-16',
     description:
       "Manage content marketing for a company that famously doesn't have a marketing department or spend money on advertising. Your job is to create content that goes viral organically, leverage the CEO's 180 million Twitter followers as your primary distribution channel, and somehow maintain brand consistency when the brand is whatever the CEO tweets at 1 AM. Budget: $0. Expectations: unlimited.",
     requirements: [
@@ -139,7 +139,7 @@ Tesla People Team`,
       'Los Gatos, CA (in-office, because our stunning colleagues collaborate best in person)',
     salary: '$190,000 - $320,000 (top of market, as with all things Netflix)',
     type: 'Full-time',
-    postedDate: '2024-01-19',
+    postedDate: '2026-01-19',
     description:
       "Acquire subscribers for the streaming service everyone already subscribes to (and shares passwords for). You'll manage multi-million dollar campaigns across channels, optimize creative for a content library that changes daily, and figure out how to convince people to pay more for the ad-free tier they used to get at the old price. Your biggest competitor is password sharing, which we've now monetized. You're welcome.",
     requirements: [
@@ -183,7 +183,7 @@ Netflix Marketing Recruiting`,
     location: 'San Francisco, CA (Salesforce Tower — floor 42, where the marketers live)',
     salary: '$190,000 - $320,000 + equity + Dreamforce VIP pass',
     type: 'Full-time',
-    postedDate: '2024-02-04',
+    postedDate: '2026-02-04',
     description:
       "Position Salesforce's AI capabilities as the most trusted, enterprise-ready AI platform in the market. You'll rebrand existing features as 'AI-powered,' add 'Einstein' to the name of products that have existed for a decade, and create messaging that makes CEOs feel excited about AI without understanding it. Dreamforce keynote preparation begins 11 months in advance. You will live and breathe Dreamforce.",
     requirements: [
@@ -226,7 +226,7 @@ Salesforce Marketing Recruiting`,
     location: 'San Francisco, CA or New York, NY (in-office, food delivery not included)',
     salary: '$140,000 - $240,000 + $200/month Uber Eats credits (dinner is on us, literally)',
     type: 'Full-time',
-    postedDate: '2024-02-24',
+    postedDate: '2026-02-24',
     description:
       "Build the Uber Eats brand in a market where every food delivery app looks, feels, and charges the same. You'll create campaigns that differentiate Uber Eats from DoorDash, Grubhub, and Postmates (which we acquired and are still figuring out what to do with). Convince consumers that $4.99 delivery + $3.99 service fee + $2.00 small order fee + $6.00 tip is actually a great deal compared to walking 3 blocks.",
     requirements: [

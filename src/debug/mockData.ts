@@ -17,7 +17,7 @@ export const mockJob: Job = {
   location: 'Remote (your laptop)',
   salary: '$0 (exposure only)',
   type: 'Full-time',
-  postedDate: '2024-01-01',
+  postedDate: '2026-01-01',
   description:
     'A fake job used for testing UI components in isolation. No actual work required. No actual rejection will occur. (The rejection is still fake, just faster.)',
   requirements: [

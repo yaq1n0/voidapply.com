@@ -9,7 +9,7 @@ export const engineeringJobs: Job[] = [
     location: 'Remote (must be in office 4 days a week)',
     salary: 'Competitive (we competed to find the lowest possible number)',
     type: 'Full-time',
-    postedDate: '2024-01-15',
+    postedDate: '2026-01-15',
     description:
       "Join our team to build user interfaces that billions of people will never notice. You'll work on projects that may or may not ship, in a fast-paced environment (we are always on fire). This role offers unlimited PTO (average taken: 3 days/year) and the opportunity to attend meetings about meetings.",
     requirements: [
@@ -82,7 +82,7 @@ The Google Talent Team
     location: 'Mountain View, CA (Hybrid — but actually full-time in office)',
     salary: "$180,000 - $350,000 (you'll get $180,000)",
     type: 'Full-time',
-    postedDate: '2024-02-01',
+    postedDate: '2026-02-01',
     description:
       "We're looking for a backend engineer to maintain systems that handle billions of requests per second. You'll be responsible for infrastructure that, if it goes down, takes half the internet with it. No pressure. Your work will be reviewed by a committee of 12 people, most of whom have never written backend code.",
     requirements: [
@@ -123,7 +123,7 @@ Google People Operations
     location: 'Seattle, WA (Return to Office — Day 1 of 365)',
     salary: 'Competitive base + stock that vests in 4 years (if you survive)',
     type: 'Full-time',
-    postedDate: '2024-01-20',
+    postedDate: '2026-01-20',
     description:
       "Are you customer-obsessed? Can you think big while also diving deep? Do you have a bias for action and insist on the highest standards while being frugal? If you used all 16 leadership principles in your last sentence, you might be ready for Amazon. You'll build services that process millions of orders, and your on-call rotation will ensure you never sleep through the night again.",
     requirements: [
@@ -199,7 +199,7 @@ Amazon Talent Acquisition
     location: 'Menlo Park, CA (in-office, but you can attend meetings in the metaverse)',
     salary: '$170,000 - $320,000 + RSUs (restricted sadness units)',
     type: 'Full-time',
-    postedDate: '2024-02-15',
+    postedDate: '2026-02-15',
     description:
       "Build immersive user experiences for a virtual world that 12 people use daily. You'll work on cutting-edge React applications (we invented React, so we get to say that) for products that will pivot directions at least 3 times during your onboarding. Your primary metric is engagement — specifically, how long you can stay engaged before burnout.",
     requirements: [
@@ -240,7 +240,7 @@ Meta Talent Team
     location: 'Redmond, WA (Hybrid — 3 days in office, 2 days in Teams meetings from home)',
     salary: '$145,000 - $280,000 + stock that actually vests reasonably',
     type: 'Full-time',
-    postedDate: '2024-01-25',
+    postedDate: '2026-01-25',
     description:
       "Join the Azure team to build cloud infrastructure that competes with AWS (we're number two and we try harder). You'll spend 40% of your time coding, 40% in Teams meetings, and 20% explaining to customers why Azure is down. This role offers the unique opportunity to maintain backward compatibility with software written in 1997.",
     requirements: [
@@ -313,7 +313,7 @@ Microsoft Talent Acquisition
       'Los Gatos, CA (Remote OK — we trust you, but we also have a culture of radical candor)',
     salary: '$250,000 - $450,000 (top of market, because we only hire "stunning colleagues")',
     type: 'Full-time',
-    postedDate: '2024-02-20',
+    postedDate: '2026-02-20',
     description:
       "We're looking for a stunning colleague to join our streaming platform team. At Netflix, we operate like a professional sports team — we only keep the best players, and everyone else gets a generous severance package. You'll build systems that deliver content to 260 million subscribers, and your performance will be evaluated with radical candor (read: public Slack feedback).",
     requirements: [
@@ -355,7 +355,7 @@ Netflix Talent Team`,
     location: 'Palo Alto, CA (in-office 6 days a week, 7 during crunch — which is always)',
     salary: '$140,000 - $260,000 + stock (vesting schedule assumes you survive the burnout)',
     type: 'Full-time',
-    postedDate: '2024-02-05',
+    postedDate: '2026-02-05',
     description:
       "Join the Autopilot team to write software that drives cars while humans watch Netflix behind the wheel. You'll work on real-time systems where bugs have slightly higher consequences than a 404 page. This is a high-intensity role — our CEO may tweet about your feature before you've finished writing it, and the deadline was yesterday. First principles thinking required; sleep is optional.",
     requirements: [
@@ -399,7 +399,7 @@ Tesla Recruiting
     salary:
       '$190,000 - $340,000 (we process $1 trillion annually but negotiation is still painful)',
     type: 'Full-time',
-    postedDate: '2024-01-30',
+    postedDate: '2026-01-30',
     description:
       "Build the financial infrastructure that powers the internet economy. Every line of code you write will move real money — and every bug will move it to the wrong place. You'll join a team that treats API design like fine art and code review like a blood sport. Our engineering blog posts are longer than most PhD theses, and yes, you will be expected to contribute.",
     requirements: [

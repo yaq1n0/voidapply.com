@@ -9,7 +9,7 @@ export const designJobs: Job[] = [
     location: 'Cupertino, CA (Apple Park — you will get lost. Everyone does.)',
     salary: '$170,000 - $290,000 (in Apple Gift Cards — just kidding, but we thought about it)',
     type: 'Full-time',
-    postedDate: '2024-01-22',
+    postedDate: '2026-01-22',
     description:
       "Design experiences for 1.5 billion iOS users who will never appreciate the 200 hours you spent perfecting a button's corner radius. You'll work under design leadership that believes every pixel is sacred and every interaction should feel 'magical.' Your Figma files will be reviewed by committee, your prototypes will be NDA'd, and your portfolio will remain empty forever because nothing you make here can be shown publicly.",
     requirements: [
@@ -54,7 +54,7 @@ Apple Design Recruiting`,
       'Mountain View, CA (Hybrid — research participants are in-person, everything else is a doc)',
     salary: '$140,000 - $250,000 + the satisfaction of being ignored by product teams',
     type: 'Full-time',
-    postedDate: '2024-02-14',
+    postedDate: '2026-02-14',
     description:
       "Conduct user research to inform the future of Google Search — a product used by 4 billion people who will never read your research report. You'll run usability studies, synthesize findings into beautiful decks, and present insights that will be overridden by a VP's gut feeling. Your research will be cited in meetings but never in product decisions.",
     requirements: [
@@ -98,7 +98,7 @@ Google UX Research Hiring`,
     salary:
       '$160,000 - $290,000 + RSUs (the real compensation is the friends you make before layoffs)',
     type: 'Full-time',
-    postedDate: '2024-01-30',
+    postedDate: '2026-01-30',
     description:
       "Redesign the experience of buying a used couch from a stranger on the internet. You'll create elegant design solutions for a marketplace where users list items as 'FREE — $500 OBO' and product photos are taken with a 2012 flip phone. Your designs should make both the person selling a gently-used mattress and the person buying it feel safe and respected.",
     requirements: [
@@ -140,7 +140,7 @@ Meta Design Recruiting`,
     location: 'Stockholm, Sweden or New York, NY (squad-based, tribe-aligned, chapter-approved)',
     salary: 'Competitive + the ability to finally fix that one playlist UI thing that bugs you',
     type: 'Full-time',
-    postedDate: '2024-02-06',
+    postedDate: '2026-02-06',
     description:
       "Lead design for Spotify's mobile app, used by 600 million people who just want to play a song but keep accidentally starting a podcast. You'll own the end-to-end experience from search to playback, navigate stakeholder feedback from music labels, podcast networks, and audiobook publishers (all of whom think the home screen should feature only their content), and ship designs in our famously autonomous squad model.",
     requirements: [
@@ -186,7 +186,7 @@ Spotify Design Recruiting`,
       'Los Gatos, CA or Hollywood, CA (where the content is made and the designers are stressed)',
     salary: '$180,000 - $300,000 (top of market — we only hire stunning designers)',
     type: 'Full-time',
-    postedDate: '2024-02-22',
+    postedDate: '2026-02-22',
     description:
       "Create visual designs for the brand that made you cancel plans to binge-watch a series. You'll design key art for shows you can't talk about, marketing campaigns for movies that may get pulled from the platform before launch, and brand materials that need to work across 190 countries. The creative bar is incredibly high — our stakeholders include filmmakers with strong opinions and a design culture that values radical candor.",
     requirements: [
@@ -232,7 +232,7 @@ Netflix Design Recruiting`,
       'San Francisco, CA (in-office — ironic for a company that gets people where they need to go)',
     salary: '$155,000 - $275,000 + Uber credits (the ultimate perk or the ultimate test)',
     type: 'Full-time',
-    postedDate: '2024-01-26',
+    postedDate: '2026-01-26',
     description:
       "Design the app experience for millions of riders who just want to get from A to B without surge pricing. You'll optimize the ride request flow that users complete in 3 seconds, then spend 40 hours perfecting. Collaborate with data science to make surge pricing feel less like highway robbery and more like 'dynamic market-based fare adjustment.' Your maps need to be accurate, your ETAs need to be optimistic, and your pickup pin needs to actually be where the user is standing.",
     requirements: [

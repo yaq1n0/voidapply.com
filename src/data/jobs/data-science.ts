@@ -10,7 +10,7 @@ export const dataScienceJobs: Job[] = [
     salary:
       '$210,000 - $370,000 (top of market, because our data scientists are stunning colleagues)',
     type: 'Full-time',
-    postedDate: '2024-02-11',
+    postedDate: '2026-02-11',
     description:
       "Use data to decide what 260 million people watch next. You'll build models that predict whether a show will be a hit before it's filmed, analyze viewing patterns to determine if users are binge-watching or just fell asleep with autoplay on, and provide evidence-based recommendations that will be overridden by a content executive who 'has a feeling about this one.' Your models will be judged by their accuracy; your career will be judged by the keeper test.",
     requirements: [
@@ -85,7 +85,7 @@ Netflix Data Science Recruiting`,
     location: 'Menlo Park, CA (in-office, where the data is as overwhelming as the campus)',
     salary: '$160,000 - $295,000 + RSUs + existential weight of your work',
     type: 'Full-time',
-    postedDate: '2024-01-25',
+    postedDate: '2026-01-25',
     description:
       "Apply data science to protect 3 billion users from misinformation, hate speech, and coordinated inauthentic behavior. You'll build classifiers that need to work across 100+ languages, analyze patterns that distinguish genuine political discourse from bot networks, and write reports that get subpoenaed by Congress. The stakes are high, the data is messy, and the correct answer to 'is this harmful content?' changes depending on which country, culture, and news cycle you're in.",
     requirements: [
@@ -128,7 +128,7 @@ Meta Data Science Recruiting`,
       'Stockholm, Sweden or New York, NY (remote-friendly, like our microservice architecture)',
     salary: 'Competitive + the power to influence what 600 million people listen to',
     type: 'Full-time',
-    postedDate: '2024-02-19',
+    postedDate: '2026-02-19',
     description:
       "Build the recommendation models behind Discover Weekly, Release Radar, and every playlist that knows your mood better than your therapist. You'll work with audio features, listening behavior, and collaborative filtering to surface music people didn't know they wanted — and occasionally, music nobody wants (we're still investigating why the model keeps recommending sea shanties). Your models serve hundreds of millions of users, and one bad deploy can ruin everyone's Monday morning commute.",
     requirements: [
@@ -172,7 +172,7 @@ Spotify ML Recruiting`,
     location: 'London, UK or Mountain View, CA (wherever the GPUs are)',
     salary: '$200,000 - $450,000 + stock + the chance to be acknowledged in a Nature paper',
     type: 'Full-time',
-    postedDate: '2024-02-03',
+    postedDate: '2026-02-03',
     description:
       "Push the boundaries of artificial intelligence research at Google DeepMind. You'll publish papers that get 10,000 citations, build models that beat humans at games nobody plays, and attend NeurIPS where everyone will ask you about GPT instead. Your research may or may not be productized — historically, it mostly ends up as a blog post that goes viral on Twitter and a demo that stops working after 3 months.",
     requirements: [
@@ -215,7 +215,7 @@ Google DeepMind Recruiting`,
     location: "Seattle, WA or Sunnyvale, CA (in-office — Alexa will know if you're not here)",
     salary: '$165,000 - $300,000 + stock (vesting schedule: 5% / 15% / 40% / 40%)',
     type: 'Full-time',
-    postedDate: '2024-01-16',
+    postedDate: '2026-01-16',
     description:
       "Make Alexa smarter — or at least make it stop misunderstanding 'play the news' as 'play the blues.' You'll work on natural language understanding, dialogue systems, and the eternal challenge of making a voice assistant useful beyond setting timers and playing music. Your models will need to handle accents from 40+ countries, background noise from screaming children, and the existential sadness of users who say 'Alexa, am I going to be okay?'",
     requirements: [
@@ -264,7 +264,7 @@ Amazon Science Recruiting
       'San Francisco, CA or Remote (fraudsters work remotely too, so you should understand the environment)',
     salary: '$175,000 - $310,000 (we pay well because getting this wrong costs billions)',
     type: 'Full-time',
-    postedDate: '2024-02-07',
+    postedDate: '2026-02-07',
     description:
       "Build models that separate legitimate transactions from fraud across millions of businesses in 195 countries. You'll work at the intersection of machine learning and financial crime, where false positives block real purchases and false negatives cost businesses millions. Every model improvement saves real money; every regression makes the front page of Hacker News. The data is massive, the adversaries are adaptive, and the stakes are higher than most ML roles will ever offer.",
     requirements: [

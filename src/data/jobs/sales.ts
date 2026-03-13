@@ -9,7 +9,7 @@ export const salesJobs: Job[] = [
     location: 'New York, NY or San Francisco, CA (wherever the clients are)',
     salary: '$130,000 base + OTE $280,000 (OTE = "Optimistic Target, Essentially")',
     type: 'Full-time',
-    postedDate: '2024-01-18',
+    postedDate: '2026-01-18',
     description:
       "Sell Salesforce's platform to financial services companies that already use Salesforce but could be paying more. You'll manage a portfolio of enterprise accounts with a combined ACV that exceeds the GDP of a small nation, navigate procurement processes designed to make vendors cry, and attend Dreamforce where you'll wear a Hawaiian shirt and pretend to enjoy it. Your quota resets every quarter, but the anxiety never does.",
     requirements: [
@@ -56,7 +56,7 @@ Salesforce Sales Recruiting`,
     location: 'Anywhere, USA (the cloud is everywhere, and so should you be)',
     salary: '$140,000 base + OTE $260,000 + Azure credits (for your "demo" environment)',
     type: 'Full-time',
-    postedDate: '2024-02-06',
+    postedDate: '2026-02-06',
     description:
       "Help enterprise customers migrate to Azure by explaining why it's better than AWS (spoiler: it's comparable, but our sales team is bigger). You'll conduct technical discovery sessions, design cloud architecture on whiteboards, and build ROI calculators that make the cloud sound cheaper than it is. Half your job is sales, half is engineering, and the other half is filling out expense reports for the steak dinners you'll buy for CIOs.",
     requirements: [
@@ -100,7 +100,7 @@ Microsoft Sales Recruiting`,
       'New York, NY or San Francisco, CA (client-facing — business casual, which at Google means shoes)',
     salary: '$120,000 base + OTE $240,000 + stock (the stock is the real compensation)',
     type: 'Full-time',
-    postedDate: '2024-02-14',
+    postedDate: '2026-02-14',
     description:
       "Sell Google Cloud to enterprises who are already deeply committed to AWS. Your job is to find the 30% of the market that hasn't been locked into an AWS or Azure contract and convince them that Google Cloud's data analytics and AI capabilities are worth switching for. You'll lose most deals to AWS, some to Azure, and occasionally to Oracle (which will hurt the most). But when you win, it'll be because of BigQuery, and you'll dine out on that story for months.",
     requirements: [
@@ -142,7 +142,7 @@ Google Cloud Sales Recruiting`,
     salary:
       '$160,000 base + OTE $250,000 (we believe in aligning incentives with implementation quality)',
     type: 'Full-time',
-    postedDate: '2024-01-28',
+    postedDate: '2026-01-28',
     description:
       "Help businesses integrate Stripe by combining deep technical knowledge with the patience of a saint. You'll write sample code during sales calls, debug webhook implementations for prospects who haven't read the docs, and explain PCI compliance in terms a startup founder can understand. Your customers are developers, so your sales pitch is a working code demo. If the demo breaks, the deal breaks. No pressure.",
     requirements: [
@@ -168,7 +168,7 @@ We evaluated your application and unfortunately need to return a 402 — Payment
 Our assessment:
 - Your technical demo during the interview worked on the first try. While normally positive, this made our panel suspicious. Our own demos fail 30% of the time. Perfection is uncanny.
 - You described webhook retries as "annoying." At Stripe, webhook retries are a feature of our reliability architecture. Respecting the retry is essential to the culture.
-- Your code sample used var instead of const. This is 2024. We have immutability standards.
+- Your code sample used var instead of const. This is 2026. We have immutability standards.
 
 We recommend contributing to our open-source projects and reapplying once you've achieved the correct emotional attachment to HTTP status codes.
 
@@ -185,7 +185,7 @@ Stripe Sales Engineering`,
     location: 'Seattle, WA or Arlington, VA (where the government contracts are)',
     salary: '$140,000 base + OTE $300,000 + the warm feeling of market dominance',
     type: 'Full-time',
-    postedDate: '2024-02-09',
+    postedDate: '2026-02-09',
     description:
       "Manage enterprise accounts for the cloud provider that started it all and still controls 31% of the market. You'll deepen relationships with Fortune 500 companies who already spend millions on AWS, upsell them on services they didn't know existed (we have 200+), and defend against aggressive Microsoft bundling deals. Your biggest competitive advantage: inertia. Nobody wants to migrate off AWS. Your job is to make sure they don't even think about it.",
     requirements: [
@@ -229,7 +229,7 @@ AWS Sales Recruiting`,
     location: 'San Francisco, CA or New York, NY (your commute will be subsidized, obviously)',
     salary: '$180,000 base + OTE $320,000 + unlimited Uber credits',
     type: 'Full-time',
-    postedDate: '2024-02-17',
+    postedDate: '2026-02-17',
     description:
       "Sell Uber for Business to corporations who currently reimburse employees for taxis via a 47-step expense report process. Your pitch: replace their antiquated travel and meal programs with Uber and Uber Eats, saving them time, money, and the administrative nightmare of processing 10,000 crumpled taxi receipts per quarter. You'll sell to HR directors, finance teams, and travel managers — a fun mix of people who all think the other department should own this decision.",
     requirements: [

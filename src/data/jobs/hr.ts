@@ -10,7 +10,7 @@ export const hrJobs: Job[] = [
       'Mountain View, CA (Hybrid — but you need to be in-office for the conversations nobody wants to have over Zoom)',
     salary: "$140,000 - $240,000 + stock + free therapy (you'll need it)",
     type: 'Full-time',
-    postedDate: '2024-02-12',
+    postedDate: '2026-02-12',
     description:
       "Support Google's engineering organization as their People Partner — the person they come to when they hate their manager, when their manager hates them, and when everyone hates the latest reorg. You'll coach directors who think management is beneath them, mediate conflicts between engineers who disagree about code style, and design performance review processes that somehow make everyone feel undervalued simultaneously. At Google, we don't call it HR. We call it 'People Operations.' It's the same thing, but with better snacks.",
     requirements: [
@@ -53,7 +53,7 @@ Google People Operations Recruiting
       "Menlo Park, CA (in-office, so you can experience the culture you'll be selling to candidates)",
     salary: '$200,000 - $340,000 + RSUs + the irony of being hired to hire others',
     type: 'Full-time',
-    postedDate: '2024-01-22',
+    postedDate: '2026-01-22',
     description:
       "Lead Meta's engineering recruiting function, which oscillates between 'hire 10,000 people immediately' and 'actually, lay off 11,000' on an annual cycle. You'll build recruiting strategies, manage a team of 50+ recruiters, and maintain employer brand credibility while the company's public perception changes weekly. Your biggest challenge: convincing candidates to join a company that's been in the news for everything except positive employer branding.",
     requirements: [
@@ -96,7 +96,7 @@ Meta People Team`,
     salary:
       '$180,000 - $300,000 (top of market, because our Talent Partners are stunning colleagues too)',
     type: 'Full-time',
-    postedDate: '2024-02-20',
+    postedDate: '2026-02-20',
     description:
       "Support Netflix's content and studio teams as their Talent Partner, navigating the unique intersection of Hollywood egos and Silicon Valley culture. You'll coach executives who came from traditional media and are adjusting to a culture where anyone can be 'let go' with a generous severance and radical candor. Your role: keep the culture intact, keep the lawyers happy, and keep the talent stunning. The keeper test applies to everyone, including the person administering it.",
     requirements: [
@@ -140,7 +140,7 @@ Netflix Talent Team`,
     salary:
       "$130,000 - $220,000 + RSUs (vesting over 4 years, so you're incentivized to stay through the hard parts)",
     type: 'Full-time',
-    postedDate: '2024-01-30',
+    postedDate: '2026-01-30',
     description:
       "Partner with AWS engineering leaders to build and maintain a workforce of 100,000+ engineers who all need to embody 16 Leadership Principles while writing code. You'll manage performance review cycles where every employee is rated against every other employee, navigate the PIP process with surgical precision, and explain to managers why 'Unregretted Attrition' is a real metric that real companies track. Your calendar will be 90% one-on-ones with managers who are having a hard time, and 10% writing documents about the one-on-ones.",
     requirements: [
@@ -185,7 +185,7 @@ Amazon PXT (People Experience & Technology — not HR, never HR)`,
     salary:
       '$150,000 - $250,000 + RSUs + the challenge of changing a company culture from the inside',
     type: 'Full-time',
-    postedDate: '2024-02-08',
+    postedDate: '2026-02-08',
     description:
       "Lead inclusion and diversity programs at a company that designs products for everyone but hires from a remarkably narrow talent pool. You'll create ERG strategies, develop inclusive hiring frameworks, and write the annual diversity report that shows incremental progress with enthusiastic language. Your programs will be well-funded, your executive sponsors will be genuine, and your results will be measured in tenths of percentage points that somehow take years to move.",
     requirements: [
@@ -229,7 +229,7 @@ Apple People Team`,
     location: 'Stockholm, Sweden or New York, NY (distributed, like our squads)',
     salary: 'Competitive + equity + the ability to influence how squads work together',
     type: 'Full-time',
-    postedDate: '2024-01-15',
+    postedDate: '2026-01-15',
     description:
       "Own people operations for Spotify's R&D organization, which operates in the famous 'Spotify Model' of squads, tribes, chapters, and guilds — an organizational framework so beloved that everyone adopted it except Spotify, which has since evolved beyond it. You'll support engineering managers navigating autonomous squads that occasionally need to be told what to do, facilitate talent reviews where everyone is 'meeting expectations,' and design career frameworks for roles that didn't exist 3 years ago.",
     requirements: [

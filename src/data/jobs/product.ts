@@ -10,7 +10,7 @@ export const productJobs: Job[] = [
     salary:
       '$160,000 - $290,000 (salary depends on how well you negotiate against our trained negotiation AI)',
     type: 'Full-time',
-    postedDate: '2024-02-10',
+    postedDate: '2026-02-10',
     description:
       "Lead product strategy for our Cloud AI division. You'll create roadmaps that will be completely rewritten every quarter, write PRDs that no engineer will read, and present to leadership using only acronyms. Your primary responsibility is to attend 8 hours of meetings daily and then do your actual work between 6 PM and midnight.",
     requirements: [
@@ -51,7 +51,7 @@ Google Cloud AI Hiring Team`,
     location: 'Seattle, WA (in-office, your Alexa will monitor attendance)',
     salary: "Competitive (we'll tell you after 5 rounds of interviews)",
     type: 'Full-time',
-    postedDate: '2024-01-28',
+    postedDate: '2026-01-28',
     description:
       'Own the product vision for Alexa features that 12 people use. Write PRFAQ documents that are longer than most novels. Navigate internal politics across 14 different teams, all of whom think they own your feature. Your success metric is how many 6-pagers you can write per quarter. The actual product is secondary.',
     requirements: [
@@ -95,7 +95,7 @@ Amazon Alexa Talent Team
     location: 'Menlo Park, CA (in-office, so you can experience our campus before the next layoff)',
     salary: '$175,000 - $310,000 + RSUs (value may decrease while you read this listing)',
     type: 'Full-time',
-    postedDate: '2024-02-12',
+    postedDate: '2026-02-12',
     description:
       "Drive growth for Instagram by making it more like TikTok, then more like BeReal, then more like whatever app teenagers are using this week. You'll own metrics that go up (engagement, time spent) and disown metrics that go down (user trust, mental health outcomes). Ship features weekly, pivot strategy monthly, and reorganize quarterly.",
     requirements: [
@@ -137,7 +137,7 @@ Meta Product Hiring Team`,
       'Cupertino, CA (Apple Park — bring your own sense of direction, the building is a circle)',
     salary: "$180,000 - $310,000 (we negotiate like we price our products: we don't)",
     type: 'Full-time',
-    postedDate: '2024-01-18',
+    postedDate: '2026-01-18',
     description:
       "Define the future of the iPhone experience for 1.5 billion users. You won't be able to tell anyone — including your family, friends, or therapist — what you're working on. NDAs are not a formality here; they're a lifestyle. You'll collaborate with design, engineering, and hardware teams, all of whom believe their discipline is the most important. Spoiler: it's design.",
     requirements: [
@@ -179,7 +179,7 @@ Apple Talent Team
     location: "Stockholm, Sweden or New York, NY (we're as distributed as our microservices)",
     salary: 'Competitive + equity (enough to afford a Spotify Premium subscription)',
     type: 'Full-time',
-    postedDate: '2024-02-08',
+    postedDate: '2026-02-08',
     description:
       "Own the algorithms that tell 600 million people what to listen to next. You'll balance user delight with label politics, artist complaints, and the eternal question: why does Discover Weekly keep recommending sea shanties? Work in our famous squad model, where every team is autonomous until leadership disagrees.",
     requirements: [
@@ -224,7 +224,7 @@ Spotify Talent Team`,
       'San Francisco, CA or Remote (we trust you to be productive anywhere, but we will check)',
     salary: '$185,000 - $330,000 (we believe in paying well, not in salary transparency)',
     type: 'Full-time',
-    postedDate: '2024-02-18',
+    postedDate: '2026-02-18',
     description:
       "Make Stripe's APIs so intuitive that developers weep with joy. You'll own the developer experience for payment integration, which means obsessing over error messages, documentation, and the exact wording of HTTP status codes. Your customers are developers, which means your bug reports will be extremely detailed and your feedback will be brutally honest.",
     requirements: [

@@ -9,7 +9,7 @@ export const operationsJobs: Job[] = [
     location: 'Everywhere, USA (wherever we build the next warehouse)',
     salary: '$85,000 - $140,000 + sign-on bonus + relocation to wherever the warehouse is',
     type: 'Full-time',
-    postedDate: '2024-01-10',
+    postedDate: '2026-01-10',
     description:
       "Manage the operations of an Amazon fulfillment center where 2,000 associates process 1 million packages daily and your Fitbit thinks you're training for a marathon. You'll optimize pick-and-pack rates, manage a team larger than most companies, and explain to corporate why the robots haven't replaced everyone yet (they're working on it). Peak season is Q4, but at Amazon, every season is peak season.",
     requirements: [
@@ -53,7 +53,7 @@ Amazon Operations Recruiting`,
     location: "Los Angeles, CA (in-office, though you'll spend most of your time in the field)",
     salary: "$120,000 - $190,000 + Uber credits (you'll need them, LA traffic is real)",
     type: 'Full-time',
-    postedDate: '2024-02-10',
+    postedDate: '2026-02-10',
     description:
       "Run Uber's operations in Los Angeles, a city where everyone drives but nobody wants to be a driver. You'll balance rider demand with driver supply, negotiate with regulators who want to ban you, and handle the PR fallout when surge pricing hits 4.7x during a Taylor Swift concert. Your job is to make sure there's always a car nearby — except during rush hour, rain, holidays, events, or any other time people actually need one.",
     requirements: [
@@ -96,7 +96,7 @@ Uber Operations Recruiting`,
     location: 'Mountain View, CA or Sunnyvale, CA (Hybrid — but your program runs 24/7)',
     salary: '$160,000 - $290,000 + stock + the satisfaction of herding genius cats',
     type: 'Full-time',
-    postedDate: '2024-01-17',
+    postedDate: '2026-01-17',
     description:
       "Manage complex technical programs that span 15 teams, 8 time zones, and 3 VPs who all think their project is the top priority. You'll create Gantt charts that become obsolete before the ink dries, run status meetings where the answer is always 'on track' (it's never on track), and send weekly updates that nobody reads but everyone expects. Your superpower is knowing which engineer to bother and when.",
     requirements: [
@@ -141,7 +141,7 @@ Google TPM Recruiting`,
       "Cupertino, CA (Apple Park — where supply chain is the most important team you've never heard of)",
     salary: '$165,000 - $280,000 (competitive because Tim Cook ran operations and became CEO)',
     type: 'Full-time',
-    postedDate: '2024-02-15',
+    postedDate: '2026-02-15',
     description:
       "Manage the supply chain for a product that sells 200 million units per year and must launch simultaneously in 40+ countries on a date that the world knows but you cannot confirm. You'll coordinate with manufacturers in Asia, logistics teams across 6 continents, and a product team that will change the camera module specs 3 months before launch. Secrecy is paramount — your family will not know what you do, your friends will not know what you do, and some days, you will not know what you do.",
     requirements: [
@@ -185,7 +185,7 @@ Apple Operations Recruiting
     location: 'Austin, TX (in the factory — not near it, not visiting it, living in it)',
     salary: '$130,000 - $210,000 + stock + the physical fitness of walking the line 12 hours a day',
     type: 'Full-time',
-    postedDate: '2024-02-22',
+    postedDate: '2026-02-22',
     description:
       "Lead production operations at Tesla's Gigafactory, where production targets change based on quarterly earnings goals and the CEO's promises to investors. You'll manage a production line that makes 5,000 vehicles per week (when everything works) and 500 per week (when the new robot arm decides it doesn't want to cooperate). Your success metric is throughput; your failure metric is being mentioned in an earnings call.",
     requirements: [
@@ -230,7 +230,7 @@ Tesla Manufacturing Recruiting
     location: 'New York, NY or Stockholm, Sweden (wherever the music industry takes you)',
     salary: 'Competitive + equity + enough Spotify Premium accounts for your whole family',
     type: 'Full-time',
-    postedDate: '2024-01-20',
+    postedDate: '2026-01-20',
     description:
       "Manage programs that bring the world's music and podcasts to Spotify's 600 million users. You'll coordinate between record labels who want more money, podcast creators who want more visibility, and product teams who want more engagement — all while navigating a royalty payment system so complex it requires its own engineering team. Every stakeholder thinks they deserve the home screen. You'll decide they all get a carousel.",
     requirements: [

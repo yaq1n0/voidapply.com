@@ -9,7 +9,7 @@ export const financeJobs: Job[] = [
     location: 'New York, NY (200 West Street — your new home, literally)',
     salary: '$110,000 base + bonus that depends on how many weekends you sacrifice',
     type: 'Full-time',
-    postedDate: '2024-01-12',
+    postedDate: '2026-01-12',
     description:
       "Join Goldman Sachs as an Investment Banking Analyst, where you'll build financial models from 9 AM to 3 AM, attend client calls you're not allowed to speak on, and format pitch decks until the pixels blur. Your primary tools are Excel, PowerPoint, and caffeine. Your primary emotions are stress, more stress, and the brief joy of a completed deal before the next one starts. Prestige is the compensation you can't deposit.",
     requirements: [
@@ -82,7 +82,7 @@ Goldman Sachs Campus Recruiting
     location: 'San Francisco, CA or Remote (our money moves globally, so should you)',
     salary: '$150,000 - $240,000 (we process trillions but budget approval still takes 3 weeks)',
     type: 'Full-time',
-    postedDate: '2024-02-13',
+    postedDate: '2026-02-13',
     description:
       "Analyze revenue streams for a company that processes $1 trillion annually but still debates whether to buy a second coffee machine. You'll build financial models, forecast growth across 40+ countries, and explain to engineering why their project can't have infinite budget. This role sits at the intersection of finance and technology — you'll need to speak both spreadsheet and code.",
     requirements: [
@@ -108,7 +108,7 @@ We've reviewed your application and, after running the numbers (which is sort of
 Our analysis:
 - NPV of hiring you: negative (using a 12% discount rate, which is generous)
 - Your financial model had a hardcoded assumption on row 47. At Stripe, all assumptions must be dynamic, documented, and defensible in a 30-minute review.
-- You used VLOOKUP instead of INDEX-MATCH. This is 2024. We have standards.
+- You used VLOOKUP instead of INDEX-MATCH. This is 2026. We have standards.
 
 We recommend optimizing your resume's unit economics before reapplying.
 
@@ -126,7 +126,7 @@ Stripe Finance Recruiting`,
     salary:
       '$130,000 - $220,000 + RSUs (vesting schedule designed by someone who hates instant gratification)',
     type: 'Full-time',
-    postedDate: '2024-01-22',
+    postedDate: '2026-01-22',
     description:
       "Own the financial planning for AWS, which generates more revenue than most countries' GDP. You'll partner with engineering leaders to justify why their team needs 200 more headcount, build models that forecast cloud consumption across every industry, and prepare variance analyses that explain why we're $400M off plan (it's always a timing issue). At Amazon, finance is a leadership function — you'll need to cite Leadership Principles in your budget reviews.",
     requirements: [
@@ -171,7 +171,7 @@ Amazon Finance Recruiting`,
       "Mountain View, CA (in Alphabet HQ, not the main Google campus — yes, there's a difference)",
     salary: '$180,000 - $310,000 + stock in a company that prints money',
     type: 'Full-time',
-    postedDate: '2024-02-20',
+    postedDate: '2026-02-20',
     description:
       "Lead financial analysis for Alphabet's 'Other Bets' — the division where moonshot projects go to burn cash beautifully. You'll build financial models for self-driving cars, life-extension research, and internet-beaming balloons, none of which are expected to be profitable this decade. Your job is to make $5 billion in annual losses look like 'strategic investment in the future.' Quarterly earnings calls will test your ability to present red numbers with green enthusiasm.",
     requirements: [
@@ -213,7 +213,7 @@ Alphabet Finance Recruiting`,
       'San Francisco, CA (in-office, the commute will help you understand our core business)',
     salary: '$170,000 - $280,000 + equity + Uber credits (for the commute we just mentioned)',
     type: 'Full-time',
-    postedDate: '2024-02-01',
+    postedDate: '2026-02-01',
     description:
       "Own financial planning for a company that took 14 years to become profitable and would very much like to stay that way. You'll forecast ride volumes, delivery demand, and driver supply across 70+ countries, build models that explain why profitability is always one quarter away, and prepare board materials that make our unit economics look intentional. Your greatest challenge: explaining to investors why we're both a ride-hailing company, a delivery company, a freight company, and an advertising company.",
     requirements: [
@@ -259,7 +259,7 @@ Uber Finance Recruiting`,
       'Austin, TX (in the Gigafactory — hard hat and steel-toed boots required for finance meetings)',
     salary: '$145,000 - $240,000 + stock (which moves based on tweets more than earnings)',
     type: 'Full-time',
-    postedDate: '2024-01-28',
+    postedDate: '2026-01-28',
     description:
       "Manage financial controls and reporting for Gigafactory operations, where the line between 'aggressive accounting' and 'first principles thinking' is thinner than you'd like. You'll close the books monthly for a manufacturing operation that changes production targets weekly, reconcile inventory for a factory that runs 24/7, and explain quarterly variances caused by decisions made via tweet. The SEC filings are your responsibility; the CEO's tweets are not. Good luck with that boundary.",
     requirements: [

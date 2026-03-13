@@ -10,7 +10,7 @@ export const managementJobs: Job[] = [
     salary:
       '$220,000 - $400,000 + stock + the crushing weight of managing people who are smarter than you',
     type: 'Full-time',
-    postedDate: '2024-02-05',
+    postedDate: '2026-02-05',
     description:
       "Manage a team of 12-15 engineers who all think they could do your job better. You'll spend your days in 1:1s, calibration meetings, and performance reviews, while somehow also being expected to 'stay technical.' Your code contributions will drop to zero, but you'll be asked to approve PRs you don't have time to read. Success is measured by your team's output, your team's happiness, and your ability to shield them from the 47 strategy pivots happening above you.",
     requirements: [
@@ -54,7 +54,7 @@ Google Engineering Leadership Recruiting`,
     salary:
       "$200,000 - $350,000 + RSUs (with Amazon's iconic 5/15/40/40 vesting — patience is a virtue)",
     type: 'Full-time',
-    postedDate: '2024-01-14',
+    postedDate: '2026-01-14',
     description:
       "Lead multiple engineering teams building the technology behind Amazon.com — the website that lets people buy 47 items at 3 AM and have them arrive by lunch. You'll own org-level roadmaps, hire and develop managers-of-managers, and write operational narratives that would make Hemingway jealous (if Hemingway used the STAR method). Your success is measured by your teams' delivery velocity, your operational metrics, and how many Leadership Principles you can cite per minute.",
     requirements: [
@@ -99,7 +99,7 @@ Amazon Leadership Recruiting`,
     salary:
       '$300,000 - $500,000 + massive RSU package (value subject to metaverse-related fluctuations)',
     type: 'Full-time',
-    postedDate: '2024-02-18',
+    postedDate: '2026-02-18',
     description:
       "Lead the engineering organization building Meta's AI infrastructure — the GPU clusters and ML platforms that power everything from your News Feed to the metaverse that we're still trying to make happen. You'll manage 100+ engineers across multiple teams, navigate reorgs that happen every quarter, and make the case for $2 billion in GPU purchases. Your biggest challenge: building for a company whose strategic direction changes based on what's trending in AI this month.",
     requirements: [
@@ -142,7 +142,7 @@ Meta Engineering Leadership Recruiting`,
     location: 'Redmond, WA (Building 34 — where the Office suite lives and the meetings never end)',
     salary: '$230,000 - $380,000 + stock + a Teams background of your choice',
     type: 'Full-time',
-    postedDate: '2024-01-25',
+    postedDate: '2026-01-25',
     description:
       "Lead a group of product managers responsible for the tools that 400 million people use to write documents, create spreadsheets, and ignore emails. You'll define the product vision for Microsoft 365, which means adding AI features to everything (Copilot for Word, Copilot for Excel, Copilot for Copilot), maintaining backward compatibility with files created in Office '97, and somehow making Teams less annoying. Every feature you ship will be compared to Google Workspace. You will pretend not to notice.",
     requirements: [
@@ -183,7 +183,7 @@ Microsoft 365 Product Leadership`,
     location: 'Los Gatos, CA (in-office — stunning colleagues deserve stunning office views)',
     salary: '$400,000 - $650,000 (total comp at top of market, naturally)',
     type: 'Full-time',
-    postedDate: '2024-02-25',
+    postedDate: '2026-02-25',
     description:
       "Lead the engineering organization responsible for delivering video to 260 million subscribers without buffering. Your CDN serves 15% of global internet traffic — if it goes down, Reddit will know before you do. You'll manage a team of the most talented (and most highly compensated) engineers in the industry, operate under Netflix's unique culture of freedom and responsibility, and make decisions that affect everyone's Friday night. The keeper test applies to VPs too.",
     requirements: [
@@ -226,7 +226,7 @@ Netflix Engineering Leadership`,
     salary:
       "$280,000 - $460,000 + RSUs + the knowledge that Siri's future is in your hands (no pressure)",
     type: 'Full-time',
-    postedDate: '2024-01-30',
+    postedDate: '2026-01-30',
     description:
       "Lead the engineering teams building Siri and Apple's AI-powered experiences. You'll manage 80+ engineers working on natural language processing, on-device ML, and the age-old question of why Siri still can't reliably set a timer. Your work will be compared to ChatGPT by every tech journalist on the planet, and you'll need to explain why privacy-first AI is worth the tradeoff of being 2 years behind the competition. Everything you do is under NDA. Everything.",
     requirements: [
