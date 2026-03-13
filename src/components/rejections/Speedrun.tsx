@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
 import type { RejectionModeProps } from '@/types'
 
 const LEADERBOARD = [
@@ -32,24 +31,16 @@ function Speedrun({ company, onComplete }: RejectionModeProps) {
     <div className="fixed inset-0 bg-white dark:bg-gray-950 z-50 flex items-center justify-center p-4">
       <div className="text-center max-w-lg w-full">
         {showStamp && (
-          <motion.div
-            initial={{ scale: 3, opacity: 0, rotate: -15 }}
-            animate={{ scale: 1, opacity: 1, rotate: -8 }}
-            transition={{ type: 'spring', damping: 10, stiffness: 200 }}
-          >
+          <div>
             <div className="inline-block border-4 border-red-600 text-red-600 dark:text-red-500 dark:border-red-500 px-8 py-4 rounded-md transform -rotate-8">
               <div className="text-5xl font-black tracking-wider">REJECTED</div>
               <div className="text-sm mt-1 font-mono">in 0.003 seconds</div>
             </div>
-          </motion.div>
+          </div>
         )}
 
         {showLeaderboard && (
-          <motion.div
-            className="mt-10"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-          >
+          <div className="mt-10">
             <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-4">
               Rejection Speedrun Leaderboard
             </h3>
@@ -68,16 +59,13 @@ function Speedrun({ company, onComplete }: RejectionModeProps) {
                 </thead>
                 <tbody>
                   {LEADERBOARD.map((entry, i) => (
-                    <motion.tr
+                    <tr
                       key={entry.company}
                       className={`border-b border-gray-100 dark:border-gray-800 ${
                         entry.company === company.name
                           ? 'bg-blue-50 dark:bg-blue-900/20 font-semibold'
                           : ''
                       }`}
-                      initial={{ opacity: 0, x: -10 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: i * 0.1 }}
                     >
                       <td className="px-4 py-2 text-gray-500 dark:text-gray-400">{i + 1}</td>
                       <td className="px-4 py-2 text-gray-900 dark:text-gray-100">
@@ -91,12 +79,12 @@ function Speedrun({ company, onComplete }: RejectionModeProps) {
                       <td className="px-4 py-2 text-right font-mono text-gray-700 dark:text-gray-300">
                         {entry.time}
                       </td>
-                    </motion.tr>
+                    </tr>
                   ))}
                 </tbody>
               </table>
             </div>
-          </motion.div>
+          </div>
         )}
       </div>
     </div>

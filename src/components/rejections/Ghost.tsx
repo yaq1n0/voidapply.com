@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
 import type { RejectionModeProps } from '@/types'
 
 function Ghost({ company, onComplete }: RejectionModeProps) {
@@ -26,53 +25,37 @@ function Ghost({ company, onComplete }: RejectionModeProps) {
     <div className="fixed inset-0 bg-white dark:bg-gray-950 z-50 flex items-center justify-center p-4">
       <div className="text-center max-w-md">
         {/* Spinner phase */}
-        <AnimatePresence>
-          {phase < 1 && (
-            <motion.div exit={{ opacity: 0 }} className="flex flex-col items-center gap-4">
-              <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-blue-600" />
-              <p className="text-gray-600 dark:text-gray-400 text-sm">
-                Submitting your application to {company.name}...
-              </p>
-            </motion.div>
-          )}
-        </AnimatePresence>
+        {phase < 1 && (
+          <div className="flex flex-col items-center gap-4">
+            <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-blue-600" />
+            <p className="text-gray-600 dark:text-gray-400 text-sm">
+              Submitting your application to {company.name}...
+            </p>
+          </div>
+        )}
 
         {/* Nothing phase */}
         {phase >= 1 && phase < 2 && <div className="h-20" />}
 
         {/* Faint text */}
         {phase >= 2 && (
-          <motion.p
-            className="text-gray-300 dark:text-gray-700 text-sm mb-4"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 2 }}
-          >
+          <p className="text-gray-300 dark:text-gray-700 text-sm mb-4">
             (This is the most realistic rejection mode)
-          </motion.p>
+          </p>
         )}
 
         {/* Status text */}
         {phase >= 3 && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1.5 }}
-            className="space-y-2"
-          >
+          <div className="space-y-2">
             <p className="text-gray-400 dark:text-gray-600 text-sm">Status: Under Review</p>
             <p className="text-gray-300 dark:text-gray-700 text-xs">(since 2024)</p>
-          </motion.div>
+          </div>
         )}
 
         {phase >= 4 && (
-          <motion.p
-            className="text-gray-400 dark:text-gray-600 text-xs mt-6"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-          >
+          <p className="text-gray-400 dark:text-gray-600 text-xs mt-6">
             You have been ghosted. Welcome to the real world.
-          </motion.p>
+          </p>
         )}
       </div>
     </div>

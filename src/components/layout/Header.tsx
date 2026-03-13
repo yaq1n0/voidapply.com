@@ -7,16 +7,13 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 bg-white/80 dark:bg-gray-950/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
       <div className="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between">
-        <Link
-          to="/"
-          className="text-lg font-bold text-gray-900 dark:text-gray-100 hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
-        >
-          void<span className="text-blue-600 dark:text-blue-400">apply</span>
+        <Link to="/" className="text-lg font-bold text-gray-900 dark:text-gray-100">
+          Void<span className="text-blue-600 dark:text-blue-400">Apply</span>
         </Link>
 
         <button
           onClick={toggleTheme}
-          className="p-2 rounded-md text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+          className="p-2 rounded-md text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800"
           aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
         >
           {theme === 'light' ? (

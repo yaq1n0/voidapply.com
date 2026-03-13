@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
-import { motion } from 'framer-motion'
 import { CompanyLogo } from '@/lib/logoGenerator'
 import { CompanyRepository } from '@/repositories'
 
@@ -20,12 +19,7 @@ export function HomePage() {
     <div>
       {/* Hero */}
       <section className="py-20 px-4">
-        <motion.div
-          className="max-w-3xl mx-auto text-center"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
+        <div className="max-w-3xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-4">
             Find Your Next <span className="text-blue-600 dark:text-blue-400">Rejection</span>
           </h1>
@@ -40,17 +34,17 @@ export function HomePage() {
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Search jobs, companies, or reasons for despair..."
-                className="flex-1 px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors text-base"
+                className="flex-1 px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent text-base"
               />
               <button
                 type="submit"
-                className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors"
+                className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg"
               >
                 Search
               </button>
             </div>
           </form>
-        </motion.div>
+        </div>
       </section>
 
       {/* Stats */}
@@ -82,7 +76,7 @@ export function HomePage() {
               <Link
                 key={company.id}
                 to={`/company/${company.id}`}
-                className="flex flex-col items-center gap-2 hover:opacity-80 transition-opacity"
+                className="flex flex-col items-center gap-2"
               >
                 <CompanyLogo companyId={company.id} size={56} />
                 <span className="text-sm text-gray-600 dark:text-gray-400">{company.name}</span>
@@ -116,14 +110,7 @@ export function HomePage() {
                 desc: 'Experience the full range of corporate rejection, speedrun-style.',
               },
             ].map((item) => (
-              <motion.div
-                key={item.step}
-                className="p-6"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: Number(item.step) * 0.15 }}
-              >
+              <div key={item.step} className="p-6">
                 <div className="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 flex items-center justify-center font-bold text-lg mx-auto mb-4">
                   {item.step}
                 </div>
@@ -131,7 +118,7 @@ export function HomePage() {
                   {item.title}
                 </h3>
                 <p className="text-sm text-gray-600 dark:text-gray-400">{item.desc}</p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>

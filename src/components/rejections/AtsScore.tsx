@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
 import type { RejectionModeProps } from '@/types'
 
 function AtsScore({ job, company, onComplete }: RejectionModeProps) {
@@ -51,7 +50,7 @@ function AtsScore({ job, company, onComplete }: RejectionModeProps) {
         {/* Header */}
         <div className="text-center mb-8">
           <div className="inline-flex items-center gap-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full px-4 py-2 mb-4">
-            <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+            <span className="w-2 h-2 bg-green-500 rounded-full" />
             <span className="text-sm text-gray-600 dark:text-gray-400">
               AI Screening Results — {company.name}
             </span>
@@ -73,7 +72,7 @@ function AtsScore({ job, company, onComplete }: RejectionModeProps) {
               strokeLinecap="round"
             />
             {/* Value arc */}
-            <motion.path
+            <path
               d="M 20 100 A 80 80 0 0 1 180 100"
               fill="none"
               stroke={gaugeColor}
@@ -100,18 +99,11 @@ function AtsScore({ job, company, onComplete }: RejectionModeProps) {
 
         {/* Categories */}
         {showCategories && (
-          <motion.div
-            className="space-y-3 mb-6"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-          >
-            {content.categories.map((cat, i) => (
-              <motion.div
+          <div className="space-y-3 mb-6">
+            {content.categories.map((cat) => (
+              <div
                 key={cat.name}
                 className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4"
-                initial={{ opacity: 0, x: -10 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: i * 0.15 }}
               >
                 <div className="flex justify-between items-center mb-2">
                   <span className="font-medium text-sm text-gray-900 dark:text-gray-100">
@@ -120,31 +112,25 @@ function AtsScore({ job, company, onComplete }: RejectionModeProps) {
                   <span className="text-sm font-mono text-red-500 font-bold">{cat.score}/100</span>
                 </div>
                 <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5 mb-2">
-                  <motion.div
+                  <div
                     className="bg-red-500 h-1.5 rounded-full"
-                    initial={{ width: 0 }}
-                    animate={{ width: `${cat.score}%` }}
-                    transition={{ delay: i * 0.15 + 0.3, duration: 0.5 }}
+                    style={{ width: `${cat.score}%` }}
                   />
                 </div>
                 <p className="text-xs text-gray-500 dark:text-gray-400 italic">{cat.comment}</p>
-              </motion.div>
+              </div>
             ))}
-          </motion.div>
+          </div>
         )}
 
         {/* Verdict */}
         {showVerdict && (
-          <motion.div
-            className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg p-6 text-center"
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-          >
+          <div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg p-6 text-center">
             <p className="text-lg font-bold text-red-600 dark:text-red-400 mb-1">
               Recommendation: AUTO-REJECT
             </p>
             <p className="text-sm text-red-500 dark:text-red-400">Confidence: 99.97%</p>
-          </motion.div>
+          </div>
         )}
       </div>
     </div>

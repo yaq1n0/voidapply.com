@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
 import type { RejectionModeProps } from '@/types'
 
 function FakeEmail({ job, company, onComplete }: RejectionModeProps) {
@@ -57,11 +56,7 @@ function FakeEmail({ job, company, onComplete }: RejectionModeProps) {
               <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600" />
             </div>
           ) : showEmail ? (
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="p-6"
-            >
+            <div className="p-6">
               {/* Email header */}
               <div className="border-b border-gray-200 dark:border-gray-700 pb-4 mb-4">
                 <h2 className="text-lg font-medium text-gray-900 dark:text-gray-100 mb-2">
@@ -89,11 +84,7 @@ function FakeEmail({ job, company, onComplete }: RejectionModeProps) {
 
               {/* CV countdown */}
               {countdown !== null && (
-                <motion.div
-                  className="mt-8 p-4 bg-gray-50 dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-700 text-center"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                >
+                <div className="mt-8 p-4 bg-gray-50 dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-700 text-center">
                   <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">
                     We'll keep your CV on file
                   </p>
@@ -101,17 +92,11 @@ function FakeEmail({ job, company, onComplete }: RejectionModeProps) {
                     Time on file: {countdown > 0 ? countdown : '0'}
                   </p>
                   {countdown <= 0 && (
-                    <motion.p
-                      className="text-red-500 text-sm mt-1 font-medium"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                    >
-                      Deleted.
-                    </motion.p>
+                    <p className="text-red-500 text-sm mt-1 font-medium">Deleted.</p>
                   )}
-                </motion.div>
+                </div>
               )}
-            </motion.div>
+            </div>
           ) : null}
         </div>
       </div>

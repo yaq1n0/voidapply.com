@@ -8,7 +8,7 @@ export function Footer() {
             href="https://github.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-gray-700 dark:hover:text-gray-300 transition-colors"
+            className="hover:text-gray-700 dark:hover:text-gray-300"
           >
             GitHub
           </a>

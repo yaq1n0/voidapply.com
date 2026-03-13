@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
 import type { RejectionModeProps } from '@/types'
 
 const LINES = [
@@ -44,11 +43,7 @@ function DevNull({ onComplete }: RejectionModeProps) {
 
   return (
     <div className="fixed inset-0 bg-gray-950 z-50 flex items-center justify-center p-4">
-      <motion.div
-        className="w-full max-w-2xl bg-black rounded-lg overflow-hidden border border-gray-700 shadow-2xl"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-      >
+      <div className="w-full max-w-2xl bg-black rounded-lg overflow-hidden border border-gray-700 shadow-2xl">
         {/* Terminal header */}
         <div className="bg-gray-800 px-4 py-2 flex items-center gap-2">
           <div className="w-3 h-3 rounded-full bg-red-500" />
@@ -71,18 +66,14 @@ function DevNull({ onComplete }: RejectionModeProps) {
         </div>
 
         {done && (
-          <motion.div
-            className="p-6 text-center border-t border-gray-700"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-          >
+          <div className="p-6 text-center border-t border-gray-700">
             <p className="text-gray-300 text-sm">Your application has been piped to /dev/null.</p>
             <p className="text-gray-500 text-xs mt-2">
               This is the most efficient rejection pipeline in the industry.
             </p>
-          </motion.div>
+          </div>
         )}
-      </motion.div>
+      </div>
     </div>
   )
 }

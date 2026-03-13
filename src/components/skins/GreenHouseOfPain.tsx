@@ -16,7 +16,7 @@ function GreenHouseOfPain({ job, company, onSubmit }: AtsSkinProps) {
           </p>
         </div>
         <div className="bg-green-700 px-3 py-1 rounded-full text-xs flex items-center gap-1">
-          <span className="inline-block w-2 h-2 bg-green-300 rounded-full animate-pulse" />
+          <span className="inline-block w-2 h-2 bg-green-300 rounded-full" />
           AI Screening Active
         </div>
       </div>
@@ -109,7 +109,7 @@ function GreenHouseOfPain({ job, company, onSubmit }: AtsSkinProps) {
 
           <button
             type="submit"
-            className="w-full py-3 bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg transition-colors"
+            className="w-full py-3 bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg"
           >
             Submit Application
           </button>

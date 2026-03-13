@@ -15,9 +15,3 @@
   --color-navy-900: #102a43;
   --color-navy-950: #0a1929;
 }
-
-@layer base {
-  body {
-    @apply transition-colors duration-200;
-  }
-}

@@ -1,6 +1,5 @@
 import { useState, useEffect, Suspense, lazy } from 'react'
 import { useParams, useSearchParams, Link } from 'react-router-dom'
-import { motion } from 'framer-motion'
 import { CompanyLogo } from '@/lib/logoGenerator'
 import {
   JobRepository,
@@ -158,31 +157,29 @@ export function JobPage() {
   if (completed) {
     return (
       <div className="max-w-2xl mx-auto px-4 py-20 text-center">
-        <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }}>
-          <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-4">
-            Application Complete
-          </h1>
-          <p className="text-gray-600 dark:text-gray-400 mb-8">
-            Your application to {company.name} has been thoroughly rejected.
-          </p>
-          <div className="flex gap-4 justify-center flex-wrap">
-            <Link
-              to="/"
-              className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors"
-            >
-              Apply to Another Job
-            </Link>
-            <button
-              onClick={() => {
-                const url = window.location.href
-                navigator.clipboard.writeText(url)
-              }}
-              className="px-6 py-3 border border-gray-300 dark:border-gray-600 rounded-lg font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
-            >
-              Share This Rejection
-            </button>
-          </div>
-        </motion.div>
+        <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+          Application Complete
+        </h1>
+        <p className="text-gray-600 dark:text-gray-400 mb-8">
+          Your application to {company.name} has been thoroughly rejected.
+        </p>
+        <div className="flex gap-4 justify-center flex-wrap">
+          <Link
+            to="/"
+            className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg"
+          >
+            Apply to Another Job
+          </Link>
+          <button
+            onClick={() => {
+              const url = window.location.href
+              navigator.clipboard.writeText(url)
+            }}
+            className="px-6 py-3 border border-gray-300 dark:border-gray-600 rounded-lg font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800"
+          >
+            Share This Rejection
+          </button>
+        </div>
       </div>
     )
   }
@@ -214,19 +211,10 @@ export function JobPage() {
     <div className="max-w-5xl mx-auto px-4 py-8">
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {/* Job Description */}
-        <motion.div
-          className="lg:col-span-2"
-          initial={{ opacity: 0, x: -10 }}
-          animate={{ opacity: 1, x: 0 }}
-        >
+        <div className="lg:col-span-2">
           <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-2">{job.title}</h1>
           <div className="flex items-center gap-3 text-sm text-gray-500 dark:text-gray-400 mb-6">
-            <Link
-              to={`/company/${company.id}`}
-              className="hover:text-blue-600 dark:hover:text-blue-400"
-            >
-              {company.name}
-            </Link>
+            <Link to={`/company/${company.id}`}>{company.name}</Link>
             <span>&middot;</span>
             <span>{job.location}</span>
             <span>&middot;</span>
@@ -266,14 +254,10 @@ export function JobPage() {
               ))}
             </ul>
           </div>
-        </motion.div>
+        </div>
 
         {/* Company Card + Apply CTA */}
-        <motion.div
-          className="lg:col-span-1"
-          initial={{ opacity: 0, x: 10 }}
-          animate={{ opacity: 1, x: 0 }}
-        >
+        <div className="lg:col-span-1">
           <div className="sticky top-20 border border-gray-200 dark:border-gray-700 rounded-lg p-5 bg-white dark:bg-gray-900">
             <div className="flex items-center gap-3 mb-4">
               <CompanyLogo companyId={company.id} size={40} />
@@ -298,7 +282,7 @@ export function JobPage() {
 
             <button
               onClick={() => setApplying(true)}
-              className="w-full py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors"
+              className="w-full py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg"
             >
               Apply Now
             </button>
@@ -306,7 +290,7 @@ export function JobPage() {
               Average time to rejection: 0.003 seconds
             </p>
           </div>
-        </motion.div>
+        </div>
       </div>
     </div>
   )
