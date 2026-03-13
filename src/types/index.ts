@@ -16,6 +16,8 @@ export type JobCategory =
   | 'operations'
   | 'data-science'
   | 'management'
+  | 'sales'
+  | 'hr'
 
 export type RejectionModeId =
   | 'dev-null'
