@@ -1,19 +1,19 @@
-import { useState } from "react";
+import { useState } from 'react'
 
 type SelectInputProps = {
-  label: string;
-  options: { value: string; label: string }[];
-  required?: boolean;
-  className?: string;
-};
+  label: string
+  options: { value: string; label: string }[]
+  required?: boolean
+  className?: string
+}
 
 export function SelectInput({
   label,
   options,
   required = false,
-  className = "",
+  className = '',
 }: SelectInputProps) {
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState('')
 
   return (
     <div className={className}>
@@ -35,5 +35,5 @@ export function SelectInput({
         ))}
       </select>
     </div>
-  );
+  )
 }

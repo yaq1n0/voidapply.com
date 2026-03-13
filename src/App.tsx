@@ -1,11 +1,11 @@
-import { HashRouter, Routes, Route } from "react-router-dom";
-import { ThemeProvider } from "@/context/ThemeContext";
-import { Layout } from "@/components/layout/Layout";
-import { HomePage } from "@/pages/HomePage";
-import { SearchResultsPage } from "@/pages/SearchResultsPage";
-import { JobPage } from "@/pages/JobPage";
-import { CompanyPage } from "@/pages/CompanyPage";
-import { NotFoundPage } from "@/pages/NotFoundPage";
+import { HashRouter, Routes, Route } from 'react-router-dom'
+import { ThemeProvider } from '@/context/ThemeContext'
+import { Layout } from '@/components/layout/Layout'
+import { HomePage } from '@/pages/HomePage'
+import { SearchResultsPage } from '@/pages/SearchResultsPage'
+import { JobPage } from '@/pages/JobPage'
+import { CompanyPage } from '@/pages/CompanyPage'
+import { NotFoundPage } from '@/pages/NotFoundPage'
 
 export function App() {
   return (
@@ -22,5 +22,5 @@ export function App() {
         </Routes>
       </HashRouter>
     </ThemeProvider>
-  );
+  )
 }

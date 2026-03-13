@@ -1,28 +1,28 @@
-import { useState, useEffect } from "react";
-import type { AtsSkinProps } from "@/types";
-import { TextInput } from "@/components/shared/TextInput";
-import { TextArea } from "@/components/shared/TextArea";
-import { FileUpload } from "@/components/shared/FileUpload";
+import { useState, useEffect } from 'react'
+import type { AtsSkinProps } from '@/types'
+import { TextInput } from '@/components/shared/TextInput'
+import { TextArea } from '@/components/shared/TextArea'
+import { FileUpload } from '@/components/shared/FileUpload'
 
 function Talaeo({ job, company, onSubmit }: AtsSkinProps) {
-  const [timeLeft, setTimeLeft] = useState(15 * 60);
+  const [timeLeft, setTimeLeft] = useState(15 * 60)
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setTimeLeft((prev) => (prev > 0 ? prev - 1 : 0));
-    }, 1000);
-    return () => clearInterval(interval);
-  }, []);
+      setTimeLeft((prev) => (prev > 0 ? prev - 1 : 0))
+    }, 1000)
+    return () => clearInterval(interval)
+  }, [])
 
-  const minutes = Math.floor(timeLeft / 60);
-  const seconds = timeLeft % 60;
+  const minutes = Math.floor(timeLeft / 60)
+  const seconds = timeLeft % 60
 
   return (
     <div className="max-w-2xl mx-auto px-4 py-8">
       {/* Session timeout banner */}
       <div className="bg-red-600 text-white px-4 py-2 text-sm text-center rounded-t-md font-mono">
-        SESSION EXPIRES IN: {String(minutes).padStart(2, "0")}:{String(seconds).padStart(2, "0")}
-        {" "}&mdash; DO NOT USE THE BACK BUTTON
+        SESSION EXPIRES IN: {String(minutes).padStart(2, '0')}:{String(seconds).padStart(2, '0')}{' '}
+        &mdash; DO NOT USE THE BACK BUTTON
       </div>
 
       {/* Ugly header */}
@@ -55,8 +55,8 @@ function Talaeo({ job, company, onSubmit }: AtsSkinProps) {
       <div className="border border-t-0 border-gray-400 dark:border-gray-600 bg-white dark:bg-gray-950 p-4">
         <form
           onSubmit={(e) => {
-            e.preventDefault();
-            onSubmit();
+            e.preventDefault()
+            onSubmit()
           }}
         >
           {/* Deliberately ugly layout */}
@@ -97,10 +97,14 @@ function Talaeo({ job, company, onSubmit }: AtsSkinProps) {
               &nbsp;SECTION 3: UPLOAD DOCUMENTS&nbsp;
             </legend>
             <div className="space-y-3">
-              <FileUpload label="Resume (PDF only, max 500KB — it's 2024 and we still limit file sizes)" required />
+              <FileUpload
+                label="Resume (PDF only, max 500KB — it's 2024 and we still limit file sizes)"
+                required
+              />
               <FileUpload label="Cover Letter" />
               <p className="text-xs text-red-600 dark:text-red-400 mt-2">
-                NOTE: Uploading a resume does NOT auto-populate any fields. You must enter all information manually below.
+                NOTE: Uploading a resume does NOT auto-populate any fields. You must enter all
+                information manually below.
               </p>
             </div>
           </fieldset>
@@ -127,9 +131,9 @@ function Talaeo({ job, company, onSubmit }: AtsSkinProps) {
             </legend>
             <div className="text-xs text-gray-500 dark:text-gray-400 space-y-2">
               <p>
-                By submitting this application, you certify that all information is true and complete.
-                Any misstatement or omission may result in your application being rejected (as if it
-                needed more reasons).
+                By submitting this application, you certify that all information is true and
+                complete. Any misstatement or omission may result in your application being rejected
+                (as if it needed more reasons).
               </p>
               <p>
                 You also agree to allow us to store your data indefinitely while claiming we'll
@@ -142,26 +146,27 @@ function Talaeo({ job, company, onSubmit }: AtsSkinProps) {
             <button
               type="submit"
               className="px-6 py-2 bg-red-700 hover:bg-red-800 text-white text-sm font-medium transition-colors"
-              style={{ fontFamily: "serif" }}
+              style={{ fontFamily: 'serif' }}
             >
               SUBMIT APPLICATION
             </button>
             <button
               type="button"
               className="px-6 py-2 bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-sm font-medium hover:bg-gray-400 dark:hover:bg-gray-600 transition-colors"
-              style={{ fontFamily: "serif" }}
+              style={{ fontFamily: 'serif' }}
             >
               SAVE FOR LATER
             </button>
           </div>
 
           <p className="text-xs text-gray-400 mt-4 text-center">
-            Talaeo&trade; Enterprise Talent Management Suite &copy; 2009-2024. Best viewed in Internet Explorer 8.
+            Talaeo&trade; Enterprise Talent Management Suite &copy; 2009-2024. Best viewed in
+            Internet Explorer 8.
           </p>
         </form>
       </div>
     </div>
-  );
+  )
 }
 
-export default Talaeo;
+export default Talaeo

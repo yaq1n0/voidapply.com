@@ -1,45 +1,44 @@
-import { createContext, useContext, useState, useEffect, useCallback } from "react";
-import type { ReactNode } from "react";
+import { createContext, useContext, useState, useEffect, useCallback } from 'react'
+import type { ReactNode } from 'react'
 
-type Theme = "light" | "dark";
+type Theme = 'light' | 'dark'
 
 type ThemeContextValue = {
-  theme: Theme;
-  toggleTheme: () => void;
-};
+  theme: Theme
+  toggleTheme: () => void
+}
 
-const ThemeContext = createContext<ThemeContextValue | null>(null);
+const ThemeContext = createContext<ThemeContextValue | null>(null)
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
   const [theme, setTheme] = useState<Theme>(() => {
-    if (typeof window !== "undefined" && window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      return "dark";
+    if (
+      typeof window !== 'undefined' &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches
+    ) {
+      return 'dark'
     }
-    return "light";
-  });
+    return 'light'
+  })
 
   useEffect(() => {
-    const root = document.documentElement;
-    if (theme === "dark") {
-      root.classList.add("dark");
+    const root = document.documentElement
+    if (theme === 'dark') {
+      root.classList.add('dark')
     } else {
-      root.classList.remove("dark");
+      root.classList.remove('dark')
     }
-  }, [theme]);
+  }, [theme])
 
   const toggleTheme = useCallback(() => {
-    setTheme((prev) => (prev === "light" ? "dark" : "light"));
-  }, []);
+    setTheme((prev) => (prev === 'light' ? 'dark' : 'light'))
+  }, [])
 
-  return (
-    <ThemeContext value={{ theme, toggleTheme }}>
-      {children}
-    </ThemeContext>
-  );
+  return <ThemeContext value={{ theme, toggleTheme }}>{children}</ThemeContext>
 }
 
 export function useTheme() {
-  const ctx = useContext(ThemeContext);
-  if (!ctx) throw new Error("useTheme must be used within ThemeProvider");
-  return ctx;
+  const ctx = useContext(ThemeContext)
+  if (!ctx) throw new Error('useTheme must be used within ThemeProvider')
+  return ctx
 }

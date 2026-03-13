@@ -1,50 +1,49 @@
-import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
-import type { RejectionModeProps } from "@/types";
+import { useState, useEffect } from 'react'
+import { motion } from 'framer-motion'
+import type { RejectionModeProps } from '@/types'
 
 function AtsScore({ job, company, onComplete }: RejectionModeProps) {
-  const [gaugeValue, setGaugeValue] = useState(0);
-  const [showCategories, setShowCategories] = useState(false);
-  const [showVerdict, setShowVerdict] = useState(false);
+  const [gaugeValue, setGaugeValue] = useState(0)
+  const [showCategories, setShowCategories] = useState(false)
+  const [showVerdict, setShowVerdict] = useState(false)
 
-  const content = job.rejectionContent["ats-score"];
-  const targetScore = content?.overallScore ?? 7;
+  const content = job.rejectionContent['ats-score']
+  const targetScore = content?.overallScore ?? 7
 
   useEffect(() => {
     // Animate gauge from 0 to target
-    const duration = 2000;
-    const start = Date.now();
+    const duration = 2000
+    const start = Date.now()
     const animate = () => {
-      const elapsed = Date.now() - start;
-      const progress = Math.min(elapsed / duration, 1);
+      const elapsed = Date.now() - start
+      const progress = Math.min(elapsed / duration, 1)
       // Ease out: sweep up high first, then settle down
-      const eased = progress < 0.6
-        ? (progress / 0.6) * 85
-        : 85 - (progress - 0.6) / 0.4 * (85 - targetScore);
-      setGaugeValue(Math.round(eased));
-      if (progress < 1) requestAnimationFrame(animate);
-    };
-    requestAnimationFrame(animate);
+      const eased =
+        progress < 0.6 ? (progress / 0.6) * 85 : 85 - ((progress - 0.6) / 0.4) * (85 - targetScore)
+      setGaugeValue(Math.round(eased))
+      if (progress < 1) requestAnimationFrame(animate)
+    }
+    requestAnimationFrame(animate)
 
-    const t1 = setTimeout(() => setShowCategories(true), 2500);
-    const t2 = setTimeout(() => setShowVerdict(true), 4500);
-    const t3 = setTimeout(onComplete, 10000);
+    const t1 = setTimeout(() => setShowCategories(true), 2500)
+    const t2 = setTimeout(() => setShowVerdict(true), 4500)
+    const t3 = setTimeout(onComplete, 10000)
     return () => {
-      clearTimeout(t1);
-      clearTimeout(t2);
-      clearTimeout(t3);
-    };
-  }, [targetScore, onComplete]);
+      clearTimeout(t1)
+      clearTimeout(t2)
+      clearTimeout(t3)
+    }
+  }, [targetScore, onComplete])
 
   if (!content) {
     return (
       <div className="fixed inset-0 bg-white dark:bg-gray-950 z-50 flex items-center justify-center">
         <p className="text-gray-500">No ATS score content available.</p>
       </div>
-    );
+    )
   }
 
-  const gaugeColor = gaugeValue > 60 ? "#22c55e" : gaugeValue > 30 ? "#eab308" : "#ef4444";
+  const gaugeColor = gaugeValue > 60 ? '#22c55e' : gaugeValue > 30 ? '#eab308' : '#ef4444'
 
   return (
     <div className="fixed inset-0 bg-gray-50 dark:bg-gray-950 z-50 overflow-y-auto">
@@ -93,13 +92,7 @@ function AtsScore({ job, company, onComplete }: RejectionModeProps) {
             >
               {gaugeValue}
             </text>
-            <text
-              x="100"
-              y="110"
-              textAnchor="middle"
-              fill="#9ca3af"
-              fontSize="12"
-            >
+            <text x="100" y="110" textAnchor="middle" fill="#9ca3af" fontSize="12">
               / 100
             </text>
           </svg>
@@ -124,9 +117,7 @@ function AtsScore({ job, company, onComplete }: RejectionModeProps) {
                   <span className="font-medium text-sm text-gray-900 dark:text-gray-100">
                     {cat.name}
                   </span>
-                  <span className="text-sm font-mono text-red-500 font-bold">
-                    {cat.score}/100
-                  </span>
+                  <span className="text-sm font-mono text-red-500 font-bold">{cat.score}/100</span>
                 </div>
                 <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5 mb-2">
                   <motion.div
@@ -136,9 +127,7 @@ function AtsScore({ job, company, onComplete }: RejectionModeProps) {
                     transition={{ delay: i * 0.15 + 0.3, duration: 0.5 }}
                   />
                 </div>
-                <p className="text-xs text-gray-500 dark:text-gray-400 italic">
-                  {cat.comment}
-                </p>
+                <p className="text-xs text-gray-500 dark:text-gray-400 italic">{cat.comment}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -154,14 +143,12 @@ function AtsScore({ job, company, onComplete }: RejectionModeProps) {
             <p className="text-lg font-bold text-red-600 dark:text-red-400 mb-1">
               Recommendation: AUTO-REJECT
             </p>
-            <p className="text-sm text-red-500 dark:text-red-400">
-              Confidence: 99.97%
-            </p>
+            <p className="text-sm text-red-500 dark:text-red-400">Confidence: 99.97%</p>
           </motion.div>
         )}
       </div>
     </div>
-  );
+  )
 }
 
-export default AtsScore;
+export default AtsScore

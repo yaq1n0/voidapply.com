@@ -1,43 +1,43 @@
 function hashCode(str: string): number {
-  let hash = 0;
+  let hash = 0
   for (let i = 0; i < str.length; i++) {
-    const char = str.charCodeAt(i);
-    hash = (hash << 5) - hash + char;
-    hash |= 0;
+    const char = str.charCodeAt(i)
+    hash = (hash << 5) - hash + char
+    hash |= 0
   }
-  return Math.abs(hash);
+  return Math.abs(hash)
 }
 
 const PALETTES = [
-  { bg: "#1e3a5f", fg: "#7eb8da" },
-  { bg: "#2d3748", fg: "#a0aec0" },
-  { bg: "#44337a", fg: "#b794f4" },
-  { bg: "#1a365d", fg: "#63b3ed" },
-  { bg: "#234e52", fg: "#81e6d9" },
-  { bg: "#3c366b", fg: "#a3bffa" },
-  { bg: "#2a4365", fg: "#90cdf4" },
-  { bg: "#285e61", fg: "#76e4f7" },
-];
+  { bg: '#1e3a5f', fg: '#7eb8da' },
+  { bg: '#2d3748', fg: '#a0aec0' },
+  { bg: '#44337a', fg: '#b794f4' },
+  { bg: '#1a365d', fg: '#63b3ed' },
+  { bg: '#234e52', fg: '#81e6d9' },
+  { bg: '#3c366b', fg: '#a3bffa' },
+  { bg: '#2a4365', fg: '#90cdf4' },
+  { bg: '#285e61', fg: '#76e4f7' },
+]
 
 function getInitials(companyId: string): string {
   return companyId
-    .split("-")
-    .map((w) => w[0]?.toUpperCase() ?? "")
-    .join("")
-    .slice(0, 2);
+    .split('-')
+    .map((w) => w[0]?.toUpperCase() ?? '')
+    .join('')
+    .slice(0, 2)
 }
 
 type LogoProps = {
-  companyId: string;
-  size?: number;
-  className?: string;
-};
+  companyId: string
+  size?: number
+  className?: string
+}
 
-export function CompanyLogo({ companyId, size = 48, className = "" }: LogoProps) {
-  const hash = hashCode(companyId);
-  const palette = PALETTES[hash % PALETTES.length]!;
-  const variant = hash % 4;
-  const initials = getInitials(companyId);
+export function CompanyLogo({ companyId, size = 48, className = '' }: LogoProps) {
+  const hash = hashCode(companyId)
+  const palette = PALETTES[hash % PALETTES.length]!
+  const variant = hash % 4
+  const initials = getInitials(companyId)
 
   return (
     <svg
@@ -118,5 +118,5 @@ export function CompanyLogo({ companyId, size = 48, className = "" }: LogoProps)
         </>
       )}
     </svg>
-  );
+  )
 }

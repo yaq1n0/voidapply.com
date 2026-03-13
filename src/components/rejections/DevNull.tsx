@@ -1,46 +1,46 @@
-import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
-import type { RejectionModeProps } from "@/types";
+import { useState, useEffect } from 'react'
+import { motion } from 'framer-motion'
+import type { RejectionModeProps } from '@/types'
 
 const LINES = [
-  "$ cat application.pdf",
-  "Reading application...",
-  "Name: [REDACTED]",
-  "Experience: Impressive, actually",
-  "Cover Letter: Heartfelt and well-written",
-  "",
-  "$ cat application.pdf | review --thorough",
-  "Reviewing with great care and attention...",
-  "Score: 94/100",
-  "Recommendation: STRONG HIRE",
-  "",
-  "$ cat application.pdf | review --thorough | /dev/null",
-  "",
-  "> /dev/null: Application successfully discarded.",
-  "> Pipeline complete. 0 bytes retained.",
-];
+  '$ cat application.pdf',
+  'Reading application...',
+  'Name: [REDACTED]',
+  'Experience: Impressive, actually',
+  'Cover Letter: Heartfelt and well-written',
+  '',
+  '$ cat application.pdf | review --thorough',
+  'Reviewing with great care and attention...',
+  'Score: 94/100',
+  'Recommendation: STRONG HIRE',
+  '',
+  '$ cat application.pdf | review --thorough | /dev/null',
+  '',
+  '> /dev/null: Application successfully discarded.',
+  '> Pipeline complete. 0 bytes retained.',
+]
 
 function DevNull({ onComplete }: RejectionModeProps) {
-  const [visibleLines, setVisibleLines] = useState(0);
-  const [done, setDone] = useState(false);
+  const [visibleLines, setVisibleLines] = useState(0)
+  const [done, setDone] = useState(false)
 
   useEffect(() => {
     if (visibleLines < LINES.length) {
-      const delay = LINES[visibleLines] === "" ? 300 : 80 + Math.random() * 120;
-      const timer = setTimeout(() => setVisibleLines((v) => v + 1), delay);
-      return () => clearTimeout(timer);
+      const delay = LINES[visibleLines] === '' ? 300 : 80 + Math.random() * 120
+      const timer = setTimeout(() => setVisibleLines((v) => v + 1), delay)
+      return () => clearTimeout(timer)
     } else {
-      const timer = setTimeout(() => setDone(true), 1000);
-      return () => clearTimeout(timer);
+      const timer = setTimeout(() => setDone(true), 1000)
+      return () => clearTimeout(timer)
     }
-  }, [visibleLines]);
+  }, [visibleLines])
 
   useEffect(() => {
     if (done) {
-      const timer = setTimeout(onComplete, 3000);
-      return () => clearTimeout(timer);
+      const timer = setTimeout(onComplete, 3000)
+      return () => clearTimeout(timer)
     }
-  }, [done, onComplete]);
+  }, [done, onComplete])
 
   return (
     <div className="fixed inset-0 bg-gray-950 z-50 flex items-center justify-center p-4">
@@ -60,13 +60,14 @@ function DevNull({ onComplete }: RejectionModeProps) {
         {/* Terminal body */}
         <div className="p-4 font-mono text-sm text-green-400 min-h-[300px]">
           {LINES.slice(0, visibleLines).map((line, i) => (
-            <div key={i} className={`${line.startsWith("$") ? "text-white" : line.startsWith(">") ? "text-red-400" : "text-green-400"}`}>
-              {line || "\u00A0"}
+            <div
+              key={i}
+              className={`${line.startsWith('$') ? 'text-white' : line.startsWith('>') ? 'text-red-400' : 'text-green-400'}`}
+            >
+              {line || '\u00A0'}
             </div>
           ))}
-          {visibleLines < LINES.length && (
-            <span className="animate-pulse">_</span>
-          )}
+          {visibleLines < LINES.length && <span className="animate-pulse">_</span>}
         </div>
 
         {done && (
@@ -75,9 +76,7 @@ function DevNull({ onComplete }: RejectionModeProps) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
           >
-            <p className="text-gray-300 text-sm">
-              Your application has been piped to /dev/null.
-            </p>
+            <p className="text-gray-300 text-sm">Your application has been piped to /dev/null.</p>
             <p className="text-gray-500 text-xs mt-2">
               This is the most efficient rejection pipeline in the industry.
             </p>
@@ -85,7 +84,7 @@ function DevNull({ onComplete }: RejectionModeProps) {
         )}
       </motion.div>
     </div>
-  );
+  )
 }
 
-export default DevNull;
+export default DevNull

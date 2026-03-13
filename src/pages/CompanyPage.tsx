@@ -1,11 +1,11 @@
-import { useParams, Link } from "react-router-dom";
-import { motion } from "framer-motion";
-import { CompanyLogo } from "@/lib/logoGenerator";
-import { CompanyRepository, JobRepository } from "@/repositories";
+import { useParams, Link } from 'react-router-dom'
+import { motion } from 'framer-motion'
+import { CompanyLogo } from '@/lib/logoGenerator'
+import { CompanyRepository, JobRepository } from '@/repositories'
 
 export function CompanyPage() {
-  const { companyId } = useParams<{ companyId: string }>();
-  const company = companyId ? CompanyRepository.getById(companyId) : undefined;
+  const { companyId } = useParams<{ companyId: string }>()
+  const company = companyId ? CompanyRepository.getById(companyId) : undefined
 
   if (!company) {
     return (
@@ -13,17 +13,15 @@ export function CompanyPage() {
         <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-2">
           Company Not Found
         </h1>
-        <p className="text-gray-500 dark:text-gray-400 mb-6">
-          This company has ghosted us too.
-        </p>
+        <p className="text-gray-500 dark:text-gray-400 mb-6">This company has ghosted us too.</p>
         <Link to="/" className="text-blue-600 dark:text-blue-400 hover:underline">
           Back to home
         </Link>
       </div>
-    );
+    )
   }
 
-  const jobs = JobRepository.getByCompany(company.id);
+  const jobs = JobRepository.getByCompany(company.id)
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
@@ -34,11 +32,10 @@ export function CompanyPage() {
       >
         <CompanyLogo companyId={company.id} size={72} />
         <div>
-          <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
-            {company.name}
-          </h1>
+          <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100">{company.name}</h1>
           <p className="text-sm text-gray-500 dark:text-gray-400">
-            {company.industry} &middot; {company.headquarters} &middot; {company.employeeCount} employees
+            {company.industry} &middot; {company.headquarters} &middot; {company.employeeCount}{' '}
+            employees
           </p>
         </div>
       </motion.div>
@@ -73,5 +70,5 @@ export function CompanyPage() {
         ))}
       </div>
     </div>
-  );
+  )
 }

@@ -1,8 +1,8 @@
-import type { AtsSkinProps } from "@/types";
-import { TextInput } from "@/components/shared/TextInput";
-import { TextArea } from "@/components/shared/TextArea";
-import { FileUpload } from "@/components/shared/FileUpload";
-import { SelectInput } from "@/components/shared/SelectInput";
+import type { AtsSkinProps } from '@/types'
+import { TextInput } from '@/components/shared/TextInput'
+import { TextArea } from '@/components/shared/TextArea'
+import { FileUpload } from '@/components/shared/FileUpload'
+import { SelectInput } from '@/components/shared/SelectInput'
 
 function GreenHouseOfPain({ job, company, onSubmit }: AtsSkinProps) {
   return (
@@ -25,8 +25,8 @@ function GreenHouseOfPain({ job, company, onSubmit }: AtsSkinProps) {
       <div className="border border-t-0 border-gray-200 dark:border-gray-700 rounded-b-lg bg-white dark:bg-gray-900">
         <form
           onSubmit={(e) => {
-            e.preventDefault();
-            onSubmit();
+            e.preventDefault()
+            onSubmit()
           }}
           className="p-6 space-y-6"
         >
@@ -68,11 +68,11 @@ function GreenHouseOfPain({ job, company, onSubmit }: AtsSkinProps) {
               label={`On a scale of 1-10, how passionate are you about ${company.name}'s mission? (Answers below 9 are automatically rejected)`}
               required
               options={[
-                { value: "1", label: "1 — I have other interests" },
-                { value: "5", label: "5 — It's fine" },
-                { value: "8", label: "8 — Very passionate" },
-                { value: "9", label: "9 — It keeps me up at night" },
-                { value: "10", label: "10 — I have a tattoo of the company logo" },
+                { value: '1', label: '1 — I have other interests' },
+                { value: '5', label: "5 — It's fine" },
+                { value: '8', label: '8 — Very passionate' },
+                { value: '9', label: '9 — It keeps me up at night' },
+                { value: '10', label: '10 — I have a tattoo of the company logo' },
               ]}
             />
 
@@ -90,11 +90,11 @@ function GreenHouseOfPain({ job, company, onSubmit }: AtsSkinProps) {
             <SelectInput
               label="How did you hear about us?"
               options={[
-                { value: "linkedin", label: "LinkedIn (where I live now)" },
-                { value: "friend", label: "A friend who also got rejected" },
-                { value: "indeed", label: "Indeed (I indeed have no hope)" },
-                { value: "dream", label: "It came to me in a dream" },
-                { value: "void", label: "The void whispered your name" },
+                { value: 'linkedin', label: 'LinkedIn (where I live now)' },
+                { value: 'friend', label: 'A friend who also got rejected' },
+                { value: 'indeed', label: 'Indeed (I indeed have no hope)' },
+                { value: 'dream', label: 'It came to me in a dream' },
+                { value: 'void', label: 'The void whispered your name' },
               ]}
             />
           </div>
@@ -116,7 +116,7 @@ function GreenHouseOfPain({ job, company, onSubmit }: AtsSkinProps) {
         </form>
       </div>
     </div>
-  );
+  )
 }
 
-export default GreenHouseOfPain;
+export default GreenHouseOfPain

@@ -1,28 +1,30 @@
-import { useSearchParams, Link } from "react-router-dom";
-import { motion } from "framer-motion";
-import { CompanyLogo } from "@/lib/logoGenerator";
-import { JobRepository, CompanyRepository } from "@/repositories";
+import { useSearchParams, Link } from 'react-router-dom'
+import { motion } from 'framer-motion'
+import { CompanyLogo } from '@/lib/logoGenerator'
+import { JobRepository, CompanyRepository } from '@/repositories'
 
 export function SearchResultsPage() {
-  const [searchParams] = useSearchParams();
-  const query = searchParams.get("q") ?? "";
-  const results = JobRepository.search(query);
+  const [searchParams] = useSearchParams()
+  const query = searchParams.get('q') ?? ''
+  const results = JobRepository.search(query)
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       <div className="mb-6">
         <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
-          {query ? `Results for "${query}"` : "All Jobs"}
+          {query ? `Results for "${query}"` : 'All Jobs'}
         </h1>
         <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
-          {results.length} {results.length === 1 ? "job" : "jobs"} found.{" "}
-          {results.length > 0 ? "All equally likely to reject you." : "Even the void has nothing for you."}
+          {results.length} {results.length === 1 ? 'job' : 'jobs'} found.{' '}
+          {results.length > 0
+            ? 'All equally likely to reject you.'
+            : 'Even the void has nothing for you.'}
         </p>
       </div>
 
       <div className="space-y-4">
         {results.map((job, i) => {
-          const company = CompanyRepository.getById(job.companyId);
+          const company = CompanyRepository.getById(job.companyId)
           return (
             <motion.div
               key={job.id}
@@ -37,9 +39,7 @@ export function SearchResultsPage() {
                 <div className="flex items-start gap-4">
                   <CompanyLogo companyId={job.companyId} size={44} className="shrink-0 mt-1" />
                   <div className="flex-1 min-w-0">
-                    <h2 className="font-semibold text-gray-900 dark:text-gray-100">
-                      {job.title}
-                    </h2>
+                    <h2 className="font-semibold text-gray-900 dark:text-gray-100">{job.title}</h2>
                     <p className="text-sm text-gray-600 dark:text-gray-400 mt-0.5">
                       {company?.name ?? job.companyId} &middot; {job.location}
                     </p>
@@ -58,7 +58,7 @@ export function SearchResultsPage() {
                 </div>
               </Link>
             </motion.div>
-          );
+          )
         })}
       </div>
 
@@ -76,5 +76,5 @@ export function SearchResultsPage() {
         </div>
       )}
     </div>
-  );
+  )
 }

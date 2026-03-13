@@ -1,24 +1,24 @@
-import { useState, useEffect, Suspense, lazy } from "react";
-import { useParams, useSearchParams, Link } from "react-router-dom";
-import { motion } from "framer-motion";
-import { CompanyLogo } from "@/lib/logoGenerator";
+import { useState, useEffect, Suspense, lazy } from 'react'
+import { useParams, useSearchParams, Link } from 'react-router-dom'
+import { motion } from 'framer-motion'
+import { CompanyLogo } from '@/lib/logoGenerator'
 import {
   JobRepository,
   CompanyRepository,
   SkinRepository,
   RejectionModeRepository,
-} from "@/repositories";
-import type { RejectionModeId } from "@/types";
+} from '@/repositories'
+import type { RejectionModeId } from '@/types'
 
-const WorkNight = lazy(() => import("@/components/skins/WorkNight"));
-const GreenHouseOfPain = lazy(() => import("@/components/skins/GreenHouseOfPain"));
-const Talaeo = lazy(() => import("@/components/skins/Talaeo"));
+const WorkNight = lazy(() => import('@/components/skins/WorkNight'))
+const GreenHouseOfPain = lazy(() => import('@/components/skins/GreenHouseOfPain'))
+const Talaeo = lazy(() => import('@/components/skins/Talaeo'))
 
-const DevNull = lazy(() => import("@/components/rejections/DevNull"));
-const Ghost = lazy(() => import("@/components/rejections/Ghost"));
-const Speedrun = lazy(() => import("@/components/rejections/Speedrun"));
-const FakeEmail = lazy(() => import("@/components/rejections/FakeEmail"));
-const AtsScore = lazy(() => import("@/components/rejections/AtsScore"));
+const DevNull = lazy(() => import('@/components/rejections/DevNull'))
+const Ghost = lazy(() => import('@/components/rejections/Ghost'))
+const Speedrun = lazy(() => import('@/components/rejections/Speedrun'))
+const FakeEmail = lazy(() => import('@/components/rejections/FakeEmail'))
+const AtsScore = lazy(() => import('@/components/rejections/AtsScore'))
 
 function SkinSelector({
   currentSkin,
@@ -27,16 +27,14 @@ function SkinSelector({
   onSkinChange,
   onModeChange,
 }: {
-  currentSkin: string;
-  currentMode: string;
-  supportedModes: RejectionModeId[];
-  onSkinChange: (id: string) => void;
-  onModeChange: (id: string) => void;
+  currentSkin: string
+  currentMode: string
+  supportedModes: RejectionModeId[]
+  onSkinChange: (id: string) => void
+  onModeChange: (id: string) => void
 }) {
-  const skins = SkinRepository.getAll();
-  const modes = RejectionModeRepository.getAll().filter((m) =>
-    supportedModes.includes(m.id),
-  );
+  const skins = SkinRepository.getAll()
+  const modes = RejectionModeRepository.getAll().filter((m) => supportedModes.includes(m.id))
 
   return (
     <div className="bg-gray-100 dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 px-4 py-3">
@@ -49,7 +47,9 @@ function SkinSelector({
             className="px-2 py-1 border border-gray-300 dark:border-gray-600 rounded bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100"
           >
             {skins.map((s) => (
-              <option key={s.id} value={s.id}>{s.name}</option>
+              <option key={s.id} value={s.id}>
+                {s.name}
+              </option>
             ))}
           </select>
         </label>
@@ -61,43 +61,47 @@ function SkinSelector({
             className="px-2 py-1 border border-gray-300 dark:border-gray-600 rounded bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100"
           >
             {modes.map((m) => (
-              <option key={m.id} value={m.id}>{m.name}</option>
+              <option key={m.id} value={m.id}>
+                {m.name}
+              </option>
             ))}
           </select>
         </label>
       </div>
     </div>
-  );
+  )
 }
 
 export function JobPage() {
-  const { jobId } = useParams<{ jobId: string }>();
-  const [searchParams, setSearchParams] = useSearchParams();
-  const [applying, setApplying] = useState(false);
-  const [rejected, setRejected] = useState(false);
-  const [completed, setCompleted] = useState(false);
+  const { jobId } = useParams<{ jobId: string }>()
+  const [searchParams, setSearchParams] = useSearchParams()
+  const [applying, setApplying] = useState(false)
+  const [rejected, setRejected] = useState(false)
+  const [completed, setCompleted] = useState(false)
 
-  const job = jobId ? JobRepository.getById(jobId) : undefined;
-  const company = job ? CompanyRepository.getById(job.companyId) : undefined;
+  const job = jobId ? JobRepository.getById(jobId) : undefined
+  const company = job ? CompanyRepository.getById(job.companyId) : undefined
 
-  const skinId = searchParams.get("skin") ?? "";
-  const modeId = searchParams.get("rejection") ?? "";
+  const skinId = searchParams.get('skin') ?? ''
+  const modeId = searchParams.get('rejection') ?? ''
 
-  const supportedModes = job ? JobRepository.getSupportedRejectionModes(job) : [];
+  const supportedModes = job ? JobRepository.getSupportedRejectionModes(job) : []
 
   useEffect(() => {
-    if (!job) return;
-    const hasSkin = searchParams.has("skin") && SkinRepository.getById(searchParams.get("skin")!);
-    const hasMode = searchParams.has("rejection") && supportedModes.includes(searchParams.get("rejection") as RejectionModeId);
+    if (!job) return
+    const hasSkin = searchParams.has('skin') && SkinRepository.getById(searchParams.get('skin')!)
+    const hasMode =
+      searchParams.has('rejection') &&
+      supportedModes.includes(searchParams.get('rejection') as RejectionModeId)
 
     if (!hasSkin || !hasMode) {
-      const newSkin = hasSkin ? searchParams.get("skin")! : SkinRepository.getRandom().id;
+      const newSkin = hasSkin ? searchParams.get('skin')! : SkinRepository.getRandom().id
       const newMode = hasMode
-        ? searchParams.get("rejection")!
-        : supportedModes[Math.floor(Math.random() * supportedModes.length)]!;
-      setSearchParams({ skin: newSkin, rejection: newMode }, { replace: true });
+        ? searchParams.get('rejection')!
+        : supportedModes[Math.floor(Math.random() * supportedModes.length)]!
+      setSearchParams({ skin: newSkin, rejection: newMode }, { replace: true })
     }
-  }, [job, searchParams, setSearchParams, supportedModes]);
+  }, [job, searchParams, setSearchParams, supportedModes])
 
   if (!job || !company) {
     return (
@@ -110,35 +114,45 @@ export function JobPage() {
           Back to home
         </Link>
       </div>
-    );
+    )
   }
 
   const handleSkinChange = (id: string) => {
-    setSearchParams({ skin: id, rejection: modeId }, { replace: true });
-  };
+    setSearchParams({ skin: id, rejection: modeId }, { replace: true })
+  }
 
   const handleModeChange = (id: string) => {
-    setSearchParams({ skin: skinId, rejection: id }, { replace: true });
-  };
+    setSearchParams({ skin: skinId, rejection: id }, { replace: true })
+  }
 
   const handleSubmit = () => {
-    setRejected(true);
-  };
+    setRejected(true)
+  }
 
   const handleRejectionComplete = () => {
-    setCompleted(true);
-  };
+    setCompleted(true)
+  }
 
   if (rejected && !completed) {
     return (
       <Suspense fallback={<LoadingFallback />}>
-        {modeId === "dev-null" && <DevNull job={job} company={company} onComplete={handleRejectionComplete} />}
-        {modeId === "ghost" && <Ghost job={job} company={company} onComplete={handleRejectionComplete} />}
-        {modeId === "speedrun" && <Speedrun job={job} company={company} onComplete={handleRejectionComplete} />}
-        {modeId === "fake-email" && <FakeEmail job={job} company={company} onComplete={handleRejectionComplete} />}
-        {modeId === "ats-score" && <AtsScore job={job} company={company} onComplete={handleRejectionComplete} />}
+        {modeId === 'dev-null' && (
+          <DevNull job={job} company={company} onComplete={handleRejectionComplete} />
+        )}
+        {modeId === 'ghost' && (
+          <Ghost job={job} company={company} onComplete={handleRejectionComplete} />
+        )}
+        {modeId === 'speedrun' && (
+          <Speedrun job={job} company={company} onComplete={handleRejectionComplete} />
+        )}
+        {modeId === 'fake-email' && (
+          <FakeEmail job={job} company={company} onComplete={handleRejectionComplete} />
+        )}
+        {modeId === 'ats-score' && (
+          <AtsScore job={job} company={company} onComplete={handleRejectionComplete} />
+        )}
       </Suspense>
-    );
+    )
   }
 
   if (completed) {
@@ -160,8 +174,8 @@ export function JobPage() {
             </Link>
             <button
               onClick={() => {
-                const url = window.location.href;
-                navigator.clipboard.writeText(url);
+                const url = window.location.href
+                navigator.clipboard.writeText(url)
               }}
               className="px-6 py-3 border border-gray-300 dark:border-gray-600 rounded-lg font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
             >
@@ -170,7 +184,7 @@ export function JobPage() {
           </div>
         </motion.div>
       </div>
-    );
+    )
   }
 
   if (applying) {
@@ -184,12 +198,16 @@ export function JobPage() {
           onModeChange={handleModeChange}
         />
         <Suspense fallback={<LoadingFallback />}>
-          {skinId === "worknight" && <WorkNight job={job} company={company} onSubmit={handleSubmit} />}
-          {skinId === "greenhouse-of-pain" && <GreenHouseOfPain job={job} company={company} onSubmit={handleSubmit} />}
-          {skinId === "talaeo" && <Talaeo job={job} company={company} onSubmit={handleSubmit} />}
+          {skinId === 'worknight' && (
+            <WorkNight job={job} company={company} onSubmit={handleSubmit} />
+          )}
+          {skinId === 'greenhouse-of-pain' && (
+            <GreenHouseOfPain job={job} company={company} onSubmit={handleSubmit} />
+          )}
+          {skinId === 'talaeo' && <Talaeo job={job} company={company} onSubmit={handleSubmit} />}
         </Suspense>
       </>
-    );
+    )
   }
 
   return (
@@ -201,11 +219,12 @@ export function JobPage() {
           initial={{ opacity: 0, x: -10 }}
           animate={{ opacity: 1, x: 0 }}
         >
-          <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-2">
-            {job.title}
-          </h1>
+          <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-2">{job.title}</h1>
           <div className="flex items-center gap-3 text-sm text-gray-500 dark:text-gray-400 mb-6">
-            <Link to={`/company/${company.id}`} className="hover:text-blue-600 dark:hover:text-blue-400">
+            <Link
+              to={`/company/${company.id}`}
+              className="hover:text-blue-600 dark:hover:text-blue-400"
+            >
               {company.name}
             </Link>
             <span>&middot;</span>
@@ -222,7 +241,10 @@ export function JobPage() {
             </h3>
             <ul className="space-y-2 mb-6">
               {job.requirements.map((req, i) => (
-                <li key={i} className="text-sm text-gray-700 dark:text-gray-300 flex items-start gap-2">
+                <li
+                  key={i}
+                  className="text-sm text-gray-700 dark:text-gray-300 flex items-start gap-2"
+                >
                   <span className="text-blue-500 mt-1 shrink-0">&bull;</span>
                   {req}
                 </li>
@@ -234,7 +256,10 @@ export function JobPage() {
             </h3>
             <ul className="space-y-2">
               {job.niceToHaves.map((nth, i) => (
-                <li key={i} className="text-sm text-gray-700 dark:text-gray-300 flex items-start gap-2">
+                <li
+                  key={i}
+                  className="text-sm text-gray-700 dark:text-gray-300 flex items-start gap-2"
+                >
                   <span className="text-gray-400 mt-1 shrink-0">&bull;</span>
                   {nth}
                 </li>
@@ -284,7 +309,7 @@ export function JobPage() {
         </motion.div>
       </div>
     </div>
-  );
+  )
 }
 
 function LoadingFallback() {
@@ -292,5 +317,5 @@ function LoadingFallback() {
     <div className="flex items-center justify-center py-20">
       <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600" />
     </div>
-  );
+  )
 }

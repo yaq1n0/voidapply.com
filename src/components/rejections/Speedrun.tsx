@@ -1,32 +1,32 @@
-import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
-import type { RejectionModeProps } from "@/types";
+import { useState, useEffect } from 'react'
+import { motion } from 'framer-motion'
+import type { RejectionModeProps } from '@/types'
 
 const LEADERBOARD = [
-  { company: "Amazon", time: "0.002s", record: true },
-  { company: "Google", time: "0.003s", record: false },
-  { company: "Meta", time: "0.004s", record: false },
-  { company: "Apple", time: "0.005s", record: false },
-  { company: "Netflix", time: "0.007s", record: false },
-  { company: "Microsoft", time: "0.012s", record: false },
-  { company: "Goldman Sachs", time: "0.045s", record: false },
-  { company: "Deloitte", time: "0.089s", record: false },
-];
+  { company: 'Amazon', time: '0.002s', record: true },
+  { company: 'Google', time: '0.003s', record: false },
+  { company: 'Meta', time: '0.004s', record: false },
+  { company: 'Apple', time: '0.005s', record: false },
+  { company: 'Netflix', time: '0.007s', record: false },
+  { company: 'Microsoft', time: '0.012s', record: false },
+  { company: 'Goldman Sachs', time: '0.045s', record: false },
+  { company: 'Deloitte', time: '0.089s', record: false },
+]
 
 function Speedrun({ company, onComplete }: RejectionModeProps) {
-  const [showStamp, setShowStamp] = useState(false);
-  const [showLeaderboard, setShowLeaderboard] = useState(false);
+  const [showStamp, setShowStamp] = useState(false)
+  const [showLeaderboard, setShowLeaderboard] = useState(false)
 
   useEffect(() => {
-    const t1 = setTimeout(() => setShowStamp(true), 50);
-    const t2 = setTimeout(() => setShowLeaderboard(true), 1500);
-    const t3 = setTimeout(onComplete, 8000);
+    const t1 = setTimeout(() => setShowStamp(true), 50)
+    const t2 = setTimeout(() => setShowLeaderboard(true), 1500)
+    const t3 = setTimeout(onComplete, 8000)
     return () => {
-      clearTimeout(t1);
-      clearTimeout(t2);
-      clearTimeout(t3);
-    };
-  }, [onComplete]);
+      clearTimeout(t1)
+      clearTimeout(t2)
+      clearTimeout(t3)
+    }
+  }, [onComplete])
 
   return (
     <div className="fixed inset-0 bg-white dark:bg-gray-950 z-50 flex items-center justify-center p-4">
@@ -35,7 +35,7 @@ function Speedrun({ company, onComplete }: RejectionModeProps) {
           <motion.div
             initial={{ scale: 3, opacity: 0, rotate: -15 }}
             animate={{ scale: 1, opacity: 1, rotate: -8 }}
-            transition={{ type: "spring", damping: 10, stiffness: 200 }}
+            transition={{ type: 'spring', damping: 10, stiffness: 200 }}
           >
             <div className="inline-block border-4 border-red-600 text-red-600 dark:text-red-500 dark:border-red-500 px-8 py-4 rounded-md transform -rotate-8">
               <div className="text-5xl font-black tracking-wider">REJECTED</div>
@@ -58,8 +58,12 @@ function Speedrun({ company, onComplete }: RejectionModeProps) {
                 <thead>
                   <tr className="border-b border-gray-200 dark:border-gray-700 text-left">
                     <th className="px-4 py-2 text-gray-500 dark:text-gray-400 font-medium">#</th>
-                    <th className="px-4 py-2 text-gray-500 dark:text-gray-400 font-medium">Company</th>
-                    <th className="px-4 py-2 text-gray-500 dark:text-gray-400 font-medium text-right">Time</th>
+                    <th className="px-4 py-2 text-gray-500 dark:text-gray-400 font-medium">
+                      Company
+                    </th>
+                    <th className="px-4 py-2 text-gray-500 dark:text-gray-400 font-medium text-right">
+                      Time
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
@@ -68,8 +72,8 @@ function Speedrun({ company, onComplete }: RejectionModeProps) {
                       key={entry.company}
                       className={`border-b border-gray-100 dark:border-gray-800 ${
                         entry.company === company.name
-                          ? "bg-blue-50 dark:bg-blue-900/20 font-semibold"
-                          : ""
+                          ? 'bg-blue-50 dark:bg-blue-900/20 font-semibold'
+                          : ''
                       }`}
                       initial={{ opacity: 0, x: -10 }}
                       animate={{ opacity: 1, x: 0 }}
@@ -96,7 +100,7 @@ function Speedrun({ company, onComplete }: RejectionModeProps) {
         )}
       </div>
     </div>
-  );
+  )
 }
 
-export default Speedrun;
+export default Speedrun

@@ -1,20 +1,20 @@
-import { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
-import { motion } from "framer-motion";
-import { CompanyLogo } from "@/lib/logoGenerator";
-import { CompanyRepository } from "@/repositories";
+import { useState } from 'react'
+import { useNavigate, Link } from 'react-router-dom'
+import { motion } from 'framer-motion'
+import { CompanyLogo } from '@/lib/logoGenerator'
+import { CompanyRepository } from '@/repositories'
 
 export function HomePage() {
-  const [query, setQuery] = useState("");
-  const navigate = useNavigate();
-  const companies = CompanyRepository.getAll();
+  const [query, setQuery] = useState('')
+  const navigate = useNavigate()
+  const companies = CompanyRepository.getAll()
 
   const handleSearch = (e: React.FormEvent) => {
-    e.preventDefault();
+    e.preventDefault()
     if (query.trim()) {
-      navigate(`/search?q=${encodeURIComponent(query.trim())}`);
+      navigate(`/search?q=${encodeURIComponent(query.trim())}`)
     }
-  };
+  }
 
   return (
     <div>
@@ -27,8 +27,7 @@ export function HomePage() {
           transition={{ duration: 0.5 }}
         >
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-4">
-            Find Your Next{" "}
-            <span className="text-blue-600 dark:text-blue-400">Rejection</span>
+            Find Your Next <span className="text-blue-600 dark:text-blue-400">Rejection</span>
           </h1>
           <p className="text-lg text-gray-600 dark:text-gray-400 mb-8">
             Apply to top companies. Get ghosted by the best.
@@ -86,9 +85,7 @@ export function HomePage() {
                 className="flex flex-col items-center gap-2 hover:opacity-80 transition-opacity"
               >
                 <CompanyLogo companyId={company.id} size={56} />
-                <span className="text-sm text-gray-600 dark:text-gray-400">
-                  {company.name}
-                </span>
+                <span className="text-sm text-gray-600 dark:text-gray-400">{company.name}</span>
               </Link>
             ))}
           </div>
@@ -103,9 +100,21 @@ export function HomePage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { step: "1", title: "Find a Job", desc: "Browse through listings that look suspiciously real." },
-              { step: "2", title: "Apply Carefully", desc: "Fill out every field. Upload your resume. Write a cover letter." },
-              { step: "3", title: "Get Instantly Rejected", desc: "Experience the full range of corporate rejection, speedrun-style." },
+              {
+                step: '1',
+                title: 'Find a Job',
+                desc: 'Browse through listings that look suspiciously real.',
+              },
+              {
+                step: '2',
+                title: 'Apply Carefully',
+                desc: 'Fill out every field. Upload your resume. Write a cover letter.',
+              },
+              {
+                step: '3',
+                title: 'Get Instantly Rejected',
+                desc: 'Experience the full range of corporate rejection, speedrun-style.',
+              },
             ].map((item) => (
               <motion.div
                 key={item.step}
@@ -121,14 +130,12 @@ export function HomePage() {
                 <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">
                   {item.title}
                 </h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400">
-                  {item.desc}
-                </p>
+                <p className="text-sm text-gray-600 dark:text-gray-400">{item.desc}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
     </div>
-  );
+  )
 }

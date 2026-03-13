@@ -1,41 +1,41 @@
-import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
-import type { RejectionModeProps } from "@/types";
+import { useState, useEffect } from 'react'
+import { motion } from 'framer-motion'
+import type { RejectionModeProps } from '@/types'
 
 function FakeEmail({ job, company, onComplete }: RejectionModeProps) {
-  const [loading, setLoading] = useState(true);
-  const [showEmail, setShowEmail] = useState(false);
-  const [countdown, setCountdown] = useState<number | null>(null);
+  const [loading, setLoading] = useState(true)
+  const [showEmail, setShowEmail] = useState(false)
+  const [countdown, setCountdown] = useState<number | null>(null)
 
-  const content = job.rejectionContent["fake-email"];
+  const content = job.rejectionContent['fake-email']
 
   useEffect(() => {
-    const t1 = setTimeout(() => setLoading(false), 2000);
-    const t2 = setTimeout(() => setShowEmail(true), 2500);
-    const t3 = setTimeout(() => setCountdown(5), 7000);
+    const t1 = setTimeout(() => setLoading(false), 2000)
+    const t2 = setTimeout(() => setShowEmail(true), 2500)
+    const t3 = setTimeout(() => setCountdown(5), 7000)
     return () => {
-      clearTimeout(t1);
-      clearTimeout(t2);
-      clearTimeout(t3);
-    };
-  }, []);
+      clearTimeout(t1)
+      clearTimeout(t2)
+      clearTimeout(t3)
+    }
+  }, [])
 
   useEffect(() => {
-    if (countdown === null) return;
+    if (countdown === null) return
     if (countdown <= 0) {
-      const timer = setTimeout(onComplete, 1500);
-      return () => clearTimeout(timer);
+      const timer = setTimeout(onComplete, 1500)
+      return () => clearTimeout(timer)
     }
-    const timer = setTimeout(() => setCountdown(countdown - 1), 1000);
-    return () => clearTimeout(timer);
-  }, [countdown, onComplete]);
+    const timer = setTimeout(() => setCountdown(countdown - 1), 1000)
+    return () => clearTimeout(timer)
+  }, [countdown, onComplete])
 
   if (!content) {
     return (
       <div className="fixed inset-0 bg-white dark:bg-gray-950 z-50 flex items-center justify-center">
         <p className="text-gray-500">No rejection email content available.</p>
       </div>
-    );
+    )
   }
 
   return (
@@ -98,7 +98,7 @@ function FakeEmail({ job, company, onComplete }: RejectionModeProps) {
                     We'll keep your CV on file
                   </p>
                   <p className="text-2xl font-mono font-bold text-gray-900 dark:text-gray-100">
-                    Time on file: {countdown > 0 ? countdown : "0"}
+                    Time on file: {countdown > 0 ? countdown : '0'}
                   </p>
                   {countdown <= 0 && (
                     <motion.p
@@ -116,7 +116,7 @@ function FakeEmail({ job, company, onComplete }: RejectionModeProps) {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default FakeEmail;
+export default FakeEmail

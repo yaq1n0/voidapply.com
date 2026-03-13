@@ -1,112 +1,104 @@
 export type Company = {
-  id: string;
-  name: string;
-  industry: string;
-  tagline: string;
-  headquarters: string;
-  employeeCount: string;
-};
+  id: string
+  name: string
+  industry: string
+  tagline: string
+  headquarters: string
+  employeeCount: string
+}
 
 export type JobCategory =
-  | "engineering"
-  | "product"
-  | "design"
-  | "marketing"
-  | "finance"
-  | "operations"
-  | "data-science"
-  | "management";
+  | 'engineering'
+  | 'product'
+  | 'design'
+  | 'marketing'
+  | 'finance'
+  | 'operations'
+  | 'data-science'
+  | 'management'
 
 export type RejectionModeId =
-  | "dev-null"
-  | "shredder"
-  | "black-hole"
-  | "ghost"
-  | "speedrun"
-  | "fake-email"
-  | "ats-score"
-  | "interview-then-ghost";
+  | 'dev-null'
+  | 'shredder'
+  | 'black-hole'
+  | 'ghost'
+  | 'speedrun'
+  | 'fake-email'
+  | 'ats-score'
+  | 'interview-then-ghost'
 
-export type GenericRejectionModeId =
-  | "dev-null"
-  | "shredder"
-  | "black-hole"
-  | "ghost"
-  | "speedrun";
+export type GenericRejectionModeId = 'dev-null' | 'shredder' | 'black-hole' | 'ghost' | 'speedrun'
 
-export type PersonalizedRejectionModeId =
-  | "fake-email"
-  | "ats-score"
-  | "interview-then-ghost";
+export type PersonalizedRejectionModeId = 'fake-email' | 'ats-score' | 'interview-then-ghost'
 
 export type FakeEmailContent = {
-  subject: string;
-  body: string;
-};
+  subject: string
+  body: string
+}
 
 export type AtsScoreCategory = {
-  name: string;
-  score: number;
-  comment: string;
-};
+  name: string
+  score: number
+  comment: string
+}
 
 export type AtsScoreContent = {
-  overallScore: number;
-  categories: AtsScoreCategory[];
-};
+  overallScore: number
+  categories: AtsScoreCategory[]
+}
 
 export type InterviewStage = {
-  name: string;
-  result: string;
-};
+  name: string
+  result: string
+}
 
 export type InterviewThenGhostContent = {
-  stages: InterviewStage[];
-};
+  stages: InterviewStage[]
+}
 
 export type RejectionContent = {
-  "fake-email"?: FakeEmailContent;
-  "ats-score"?: AtsScoreContent;
-  "interview-then-ghost"?: InterviewThenGhostContent;
-};
+  'fake-email'?: FakeEmailContent
+  'ats-score'?: AtsScoreContent
+  'interview-then-ghost'?: InterviewThenGhostContent
+}
 
 export type Job = {
-  id: string;
-  companyId: string;
-  category: JobCategory;
-  title: string;
-  location: string;
-  salary: string;
-  type: string;
-  postedDate: string;
-  description: string;
-  requirements: string[];
-  niceToHaves: string[];
-  rejectionContent: RejectionContent;
-};
+  id: string
+  companyId: string
+  category: JobCategory
+  title: string
+  location: string
+  salary: string
+  type: string
+  postedDate: string
+  description: string
+  requirements: string[]
+  niceToHaves: string[]
+  rejectionContent: RejectionContent
+}
 
 export type AtsSkin = {
-  id: string;
-  name: string;
-  tagline: string;
-  accentColor: string;
-};
+  id: string
+  name: string
+  tagline: string
+  accentColor: string
+}
 
 export type RejectionMode = {
-  id: RejectionModeId;
-  name: string;
-  description: string;
-  isGeneric: boolean;
-};
+  id: RejectionModeId
+  name: string
+  description: string
+  isGeneric: boolean
+}
 
 export type AtsSkinProps = {
-  job: Job;
-  company: Company;
-  onSubmit: () => void;
-};
+  job: Job
+  company: Company
+  onSubmit: () => void
+}
 
 export type RejectionModeProps = {
-  job: Job;
-  company: Company;
-  onComplete: () => void;
-};
+  job: Job
+  company: Company
+  onComplete: () => void
+}

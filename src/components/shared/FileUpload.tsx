@@ -1,19 +1,19 @@
-import { useState } from "react";
+import { useState } from 'react'
 
 type FileUploadProps = {
-  label: string;
-  required?: boolean;
-  accept?: string;
-  className?: string;
-};
+  label: string
+  required?: boolean
+  accept?: string
+  className?: string
+}
 
 export function FileUpload({
   label,
   required = false,
-  accept = ".pdf,.doc,.docx",
-  className = "",
+  accept = '.pdf,.doc,.docx',
+  className = '',
 }: FileUploadProps) {
-  const [fileName, setFileName] = useState<string | null>(null);
+  const [fileName, setFileName] = useState<string | null>(null)
 
   return (
     <div className={className}>
@@ -29,15 +29,15 @@ export function FileUpload({
             accept={accept}
             className="sr-only"
             onChange={(e) => {
-              const file = e.target.files?.[0];
-              setFileName(file?.name ?? null);
+              const file = e.target.files?.[0]
+              setFileName(file?.name ?? null)
             }}
           />
         </label>
         <span className="text-sm text-gray-500 dark:text-gray-400">
-          {fileName ?? "No file chosen"}
+          {fileName ?? 'No file chosen'}
         </span>
       </div>
     </div>
-  );
+  )
 }

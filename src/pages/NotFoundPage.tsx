@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import { Link } from 'react-router-dom'
+import { motion } from 'framer-motion'
 
 export function NotFoundPage() {
   return (
@@ -9,9 +9,7 @@ export function NotFoundPage() {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.4 }}
       >
-        <h1 className="text-6xl font-bold text-gray-300 dark:text-gray-700 mb-4">
-          404
-        </h1>
+        <h1 className="text-6xl font-bold text-gray-300 dark:text-gray-700 mb-4">404</h1>
         <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100 mb-3">
           Application Not Found
         </h2>
@@ -26,5 +24,5 @@ export function NotFoundPage() {
         </Link>
       </motion.div>
     </div>
-  );
+  )
 }
