@@ -7,7 +7,10 @@ export function HomePage() {
   const [query, setQuery] = useState('')
   const navigate = useNavigate()
   const companies = CompanyRepository.getAll()
-  const recentJobs = JobRepository.search('').slice(0, 3)
+  const random3Jobs = JobRepository.search('')
+    // eslint-disable-next-line react-hooks/purity
+    .sort(() => Math.random() - 0.5)
+    .slice(0, 3)
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault()
@@ -17,13 +20,13 @@ export function HomePage() {
   return (
     <div>
       {/* Hero */}
-      <section className="bg-linkedin dark:bg-navy-900 py-16 px-4">
+      <section className="bg-linkedin/75 dark:bg-navy-900 py-16 px-4">
         <div className="max-w-2xl mx-auto text-center">
           <h1 className="text-3xl md:text-4xl font-semibold text-white mb-3">
             Find your next rejection
           </h1>
           <p className="text-blue-100 dark:text-navy-300 mb-8">
-            Apply to top companies. Get ghosted by the best.
+            Apply to mediocre companies & get rejected instantly!
           </p>
 
           <form onSubmit={handleSearch} className="max-w-xl mx-auto">
@@ -32,12 +35,12 @@ export function HomePage() {
                 type="text"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search by title, company, or reason for despair"
+                placeholder="Search by job title, company or location"
                 className="flex-1 px-4 py-3 rounded-sm bg-white text-gray-900 placeholder-gray-500 text-sm focus:outline-none"
               />
               <button
                 type="submit"
-                className="px-6 py-3 bg-amber-500 hover:bg-amber-600 text-white font-semibold rounded-sm text-sm"
+                className="px-6 py-3 bg-linkedin hover:bg-linkedin-dark text-white font-semibold rounded-sm text-sm"
               >
                 Search
               </button>
@@ -46,35 +49,17 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* Stats bar */}
-      <section className="border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950">
-        <div className="max-w-4xl mx-auto px-4 py-5 flex justify-center gap-10 md:gap-20 text-center">
-          <div>
-            <div className="text-xl font-bold text-gray-900 dark:text-gray-100">10,000+</div>
-            <div className="text-xs text-gray-500 dark:text-gray-400">jobs posted</div>
-          </div>
-          <div>
-            <div className="text-xl font-bold text-gray-900 dark:text-gray-100">0</div>
-            <div className="text-xs text-gray-500 dark:text-gray-400">responses</div>
-          </div>
-          <div>
-            <div className="text-xl font-bold text-gray-900 dark:text-gray-100">&infin;</div>
-            <div className="text-xs text-gray-500 dark:text-gray-400">ghostings</div>
-          </div>
-        </div>
-      </section>
-
       {/* Suggested for you */}
       <section className="py-10 px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-1">
-            Suggested for you
+            "Suggested" for you
           </h2>
           <p className="text-xs text-gray-500 dark:text-gray-400 mb-4">
-            Based on your profile, preferences, and willingness to suffer
+            Entirely random jobs but supposedly selected based on your profile.
           </p>
           <div className="space-y-2">
-            {recentJobs.map((job) => {
+            {random3Jobs.map((job) => {
               const company = CompanyRepository.getById(job.companyId)
               return (
                 <Link
@@ -107,10 +92,10 @@ export function HomePage() {
       <section className="py-10 px-4 bg-gray-50 dark:bg-gray-900">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-1">
-            Explore companies that hire for your skills
+            Explore companies that are "hiring"
           </h2>
           <p className="text-xs text-gray-500 dark:text-gray-400 mb-5">
-            And then ignore your application entirely
+            Unfortunately, they will be moving forward with other candidates.
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
             {companies.map((company) => (
@@ -140,18 +125,18 @@ export function HomePage() {
             {[
               {
                 step: '1',
-                title: 'Find a Job',
-                desc: 'Browse through listings that look suspiciously real.',
+                title: 'Search',
+                desc: 'Find something that looks somewhat relevant to your skills',
               },
               {
                 step: '2',
-                title: 'Apply Carefully',
-                desc: 'Fill out every field. Upload your resume. Write a cover letter.',
+                title: 'Apply',
+                desc: 'Fill out every field perfectly. Upload your embellished CV. Make ChatGPT write you a cover letter.',
               },
               {
                 step: '3',
-                title: 'Get Instantly Rejected',
-                desc: 'Experience the full range of corporate rejection, speedrun-style.',
+                title: 'Rejected',
+                desc: 'Instantaneous automated rejeciton, blazingly fast!',
               },
             ].map((item) => (
               <div key={item.step} className="p-5">
