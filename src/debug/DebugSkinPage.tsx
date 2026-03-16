@@ -1,10 +1,38 @@
-import { Suspense, lazy, useState } from 'react'
+import React, { Suspense, lazy, useState } from 'react'
 import { useParams, useNavigate, Link } from 'react-router-dom'
 import { mockJob, mockCompany } from './mockData'
+import type { AtsSkinProps } from '@/types'
 
-const WorkNight = lazy(() => import('@/components/skins/WorkNight'))
-const GreenHouseOfPain = lazy(() => import('@/components/skins/GreenHouseOfPain'))
-const Talaeo = lazy(() => import('@/components/skins/Talaeo'))
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const SKIN_REGISTRY = new Map<string, React.ComponentType<any>>([
+  ['worknight', lazy(() => import('@/components/skins/WorkNight'))],
+  ['greenhouse-of-pain', lazy(() => import('@/components/skins/GreenHouseOfPain'))],
+  ['talaeo', lazy(() => import('@/components/skins/Talaeo'))],
+  ['linked-out', lazy(() => import('@/components/skins/LinkedOut'))],
+  ['ashbye-hq', lazy(() => import('@/components/skins/AshbyeHQ'))],
+  ['byebob', lazy(() => import('@/components/skins/ByeBob'))],
+  ['rejectable', lazy(() => import('@/components/skins/Rejectable'))],
+  ['lever-to-nowhere', lazy(() => import('@/components/skins/LeverToNowhere'))],
+  ['bamboom', lazy(() => import('@/components/skins/BamBoom'))],
+  ['teamfailor', lazy(() => import('@/components/skins/Teamfailor'))],
+  ['icantms', lazy(() => import('@/components/skins/IcantMS'))],
+  ['dumb-recruiters', lazy(() => import('@/components/skins/DumbRecruiters'))],
+  ['jobvoid', lazy(() => import('@/components/skins/JobVoid'))],
+])
+
+const ALL_REJECTION_MODES = [
+  'dev-null',
+  'ghost',
+  'speedrun',
+  'shredder',
+  'black-hole',
+  'assessment-gauntlet',
+  'fake-email',
+  'ats-score',
+  'interview-then-ghost',
+  'culture-fit',
+  'phantom-offer',
+]
 
 export function DebugSkinPage() {
   const { skinId } = useParams<{ skinId: string }>()
@@ -14,6 +42,9 @@ export function DebugSkinPage() {
   const handleSubmit = () => {
     navigate(`/debug/rejection/${rejectionMode}`)
   }
+
+  const SkinComponent = skinId ? SKIN_REGISTRY.get(skinId) : undefined
+  const skinProps: AtsSkinProps = { job: mockJob, company: mockCompany, onSubmit: handleSubmit }
 
   return (
     <>
@@ -28,11 +59,11 @@ export function DebugSkinPage() {
               onChange={(e) => setRejectionMode(e.target.value)}
               className="px-1.5 py-0.5 border border-yellow-300 dark:border-yellow-700 rounded bg-white dark:bg-gray-900 text-yellow-900 dark:text-yellow-300"
             >
-              <option value="dev-null">/dev/null</option>
-              <option value="ghost">ghost</option>
-              <option value="speedrun">speedrun</option>
-              <option value="fake-email">fake-email</option>
-              <option value="ats-score">ats-score</option>
+              {ALL_REJECTION_MODES.map((mode) => (
+                <option key={mode} value={mode}>
+                  {mode}
+                </option>
+              ))}
             </select>
           </label>
         </div>
@@ -42,16 +73,9 @@ export function DebugSkinPage() {
       </div>
 
       <Suspense fallback={<LoadingFallback />}>
-        {skinId === 'worknight' && (
-          <WorkNight job={mockJob} company={mockCompany} onSubmit={handleSubmit} />
-        )}
-        {skinId === 'greenhouse-of-pain' && (
-          <GreenHouseOfPain job={mockJob} company={mockCompany} onSubmit={handleSubmit} />
-        )}
-        {skinId === 'talaeo' && (
-          <Talaeo job={mockJob} company={mockCompany} onSubmit={handleSubmit} />
-        )}
-        {!['worknight', 'greenhouse-of-pain', 'talaeo'].includes(skinId ?? '') && (
+        {SkinComponent ? (
+          <SkinComponent {...skinProps} />
+        ) : (
           <div className="max-w-xl mx-auto px-4 py-20 text-center">
             <p className="text-gray-500 dark:text-gray-400 text-sm">
               Unknown skin: <code className="font-mono">{skinId}</code>

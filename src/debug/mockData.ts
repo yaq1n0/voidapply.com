@@ -56,5 +56,23 @@ The Debug Corp Talent Team
         { name: 'Vibes', score: 67, comment: 'Acceptable, but not exceptional.' },
       ],
     },
+    'interview-then-ghost': {
+      stages: [
+        { name: 'Phone Screen', result: 'Passed' },
+        { name: 'Technical Assessment', result: 'Passed' },
+        { name: 'Final Round with VP', result: 'Passed' },
+        { name: 'Offer Stage', result: '...' },
+      ],
+    },
+    'culture-fit': {
+      recruiterName: 'Alex from Talent',
+      stageReached: 'Final Round',
+    },
+    'phantom-offer': {
+      recruiterName: 'Jamie Chen',
+      jobTitle: 'Senior Debug Engineer',
+      fakeSalary: '$180,000',
+      promisedTimeline: 'EOD Friday',
+    },
   },
 }

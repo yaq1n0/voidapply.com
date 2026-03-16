@@ -1,14 +1,22 @@
-import { Suspense, lazy } from 'react'
+import React, { Suspense, lazy } from 'react'
 import { useParams, useNavigate, Link } from 'react-router-dom'
 import { mockJob, mockCompany } from './mockData'
+import type { RejectionModeProps } from '@/types'
 
-const DevNull = lazy(() => import('@/components/rejections/DevNull'))
-const Ghost = lazy(() => import('@/components/rejections/Ghost'))
-const Speedrun = lazy(() => import('@/components/rejections/Speedrun'))
-const FakeEmail = lazy(() => import('@/components/rejections/FakeEmail'))
-const AtsScore = lazy(() => import('@/components/rejections/AtsScore'))
-
-const KNOWN_MODES = ['dev-null', 'ghost', 'speedrun', 'fake-email', 'ats-score']
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const REJECTION_REGISTRY = new Map<string, React.ComponentType<any>>([
+  ['dev-null', lazy(() => import('@/components/rejections/DevNull'))],
+  ['ghost', lazy(() => import('@/components/rejections/Ghost'))],
+  ['speedrun', lazy(() => import('@/components/rejections/Speedrun'))],
+  ['fake-email', lazy(() => import('@/components/rejections/FakeEmail'))],
+  ['ats-score', lazy(() => import('@/components/rejections/AtsScore'))],
+  ['shredder', lazy(() => import('@/components/rejections/Shredder'))],
+  ['black-hole', lazy(() => import('@/components/rejections/BlackHole'))],
+  ['assessment-gauntlet', lazy(() => import('@/components/rejections/AssessmentGauntlet'))],
+  ['culture-fit', lazy(() => import('@/components/rejections/CultureFit'))],
+  ['interview-then-ghost', lazy(() => import('@/components/rejections/InterviewThenGhost'))],
+  ['phantom-offer', lazy(() => import('@/components/rejections/PhantomOffer'))],
+])
 
 export function DebugRejectionPage() {
   const { modeId } = useParams<{ modeId: string }>()
@@ -16,6 +24,13 @@ export function DebugRejectionPage() {
 
   const handleComplete = () => {
     navigate('/debug')
+  }
+
+  const RejectionComponent = modeId ? REJECTION_REGISTRY.get(modeId) : undefined
+  const rejectionProps: RejectionModeProps = {
+    job: mockJob,
+    company: mockCompany,
+    onComplete: handleComplete,
   }
 
   return (
@@ -31,22 +46,9 @@ export function DebugRejectionPage() {
       </div>
 
       <Suspense fallback={<LoadingFallback />}>
-        {modeId === 'dev-null' && (
-          <DevNull job={mockJob} company={mockCompany} onComplete={handleComplete} />
-        )}
-        {modeId === 'ghost' && (
-          <Ghost job={mockJob} company={mockCompany} onComplete={handleComplete} />
-        )}
-        {modeId === 'speedrun' && (
-          <Speedrun job={mockJob} company={mockCompany} onComplete={handleComplete} />
-        )}
-        {modeId === 'fake-email' && (
-          <FakeEmail job={mockJob} company={mockCompany} onComplete={handleComplete} />
-        )}
-        {modeId === 'ats-score' && (
-          <AtsScore job={mockJob} company={mockCompany} onComplete={handleComplete} />
-        )}
-        {!KNOWN_MODES.includes(modeId ?? '') && (
+        {RejectionComponent ? (
+          <RejectionComponent {...rejectionProps} />
+        ) : (
           <div className="max-w-xl mx-auto px-4 py-20 text-center">
             <p className="text-gray-500 dark:text-gray-400 text-sm">
               Unknown rejection mode: <code className="font-mono">{modeId}</code>
