@@ -5,6 +5,7 @@ type Phase = 'document' | 'shredding' | 'strips' | 'done'
 
 function Shredder({ onComplete }: RejectionModeProps) {
   const [phase, setPhase] = useState<Phase>('document')
+  const [stripHeights] = useState(() => Array.from({ length: 24 }, () => 40 + Math.random() * 60))
 
   useEffect(() => {
     const t1 = setTimeout(() => setPhase('shredding'), 1000)
@@ -99,7 +100,7 @@ function Shredder({ onComplete }: RejectionModeProps) {
               style={{
                 left: `${10 + i * 3.3}%`,
                 top: '10%',
-                height: `${40 + Math.random() * 60}px`,
+                height: `${stripHeights[i]}px`,
                 backgroundColor: ['#f87171', '#60a5fa', '#34d399', '#fbbf24', '#a78bfa'][i % 5],
                 animation: `fall ${0.5 + i * 0.05}s ease-in forwards`,
                 animationDelay: `${i * 0.03}s`,

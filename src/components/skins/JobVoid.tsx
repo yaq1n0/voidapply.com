@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import type { AtsSkinProps } from '@/types'
 import { TextInput } from '@/components/shared/TextInput'
 import { TextArea } from '@/components/shared/TextArea'
@@ -7,9 +7,8 @@ import { SelectInput } from '@/components/shared/SelectInput'
 
 function JobVoid({ job, company, onSubmit }: AtsSkinProps) {
   const [activityPhase, setActivityPhase] = useState(0)
-  const refNum = useRef(
-    Math.floor(10000000 + Math.random() * 90000000).toString(),
-  )
+  const [refNum] = useState(() => Math.floor(10000000 + Math.random() * 90000000).toString())
+  const [applicantsCount] = useState(() => Math.floor(Math.random() * 400 + 247))
 
   useEffect(() => {
     const t = setTimeout(() => setActivityPhase(1), 3000)
@@ -98,11 +97,7 @@ function JobVoid({ job, company, onSubmit }: AtsSkinProps) {
                   onClick={handleSocialSubmit}
                   className="flex-1 flex items-center justify-center gap-2 py-2.5 px-4 border-2 border-gray-800 text-gray-800 dark:border-gray-300 dark:text-gray-300 rounded-lg font-semibold text-sm hover:bg-gray-800 hover:text-white dark:hover:bg-gray-300 dark:hover:text-gray-900 transition-colors"
                 >
-                  <svg
-                    viewBox="0 0 16 16"
-                    className="w-4 h-4 fill-current"
-                    aria-hidden="true"
-                  >
+                  <svg viewBox="0 0 16 16" className="w-4 h-4 fill-current" aria-hidden="true">
                     <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
                   </svg>
                   Apply with GitHub
@@ -161,10 +156,7 @@ function JobVoid({ job, company, onSubmit }: AtsSkinProps) {
                     label="GitHub Profile URL"
                     placeholder="https://github.com/yourusername"
                   />
-                  <TextInput
-                    label="Portfolio / Personal Website"
-                    placeholder="https://"
-                  />
+                  <TextInput label="Portfolio / Personal Website" placeholder="https://" />
                   <p className="text-xs text-gray-400 dark:text-gray-500 -mt-2">
                     These will be reviewed by a recruiter who is no longer with the company.
                   </p>
@@ -229,15 +221,12 @@ function JobVoid({ job, company, onSubmit }: AtsSkinProps) {
               {/* Footer Notice */}
               <div className="text-xs text-gray-400 dark:text-gray-600 text-center leading-relaxed">
                 An email confirmation with reference{' '}
-                <span className="font-mono text-gray-500 dark:text-gray-500">
-                  JV-{refNum.current}
-                </span>{' '}
-                will be sent to the address provided. No other communication will follow.
+                <span className="font-mono text-gray-500 dark:text-gray-500">JV-{refNum}</span> will
+                be sent to the address provided. No other communication will follow.
               </div>
 
               <p className="text-xs text-gray-300 dark:text-gray-700 text-center">
-                Powered by Jobvite&trade; &mdash; Social Recruiting&trade; (candidates not
-                included)
+                Powered by Jobvite&trade; &mdash; Social Recruiting&trade; (candidates not included)
               </p>
             </form>
           </div>
@@ -256,12 +245,8 @@ function JobVoid({ job, company, onSubmit }: AtsSkinProps) {
                       S
                     </div>
                     <div>
-                      <p className="text-sm font-medium text-gray-900 dark:text-gray-100">
-                        Sarah
-                      </p>
-                      <p className="text-xs text-gray-500 dark:text-gray-400">
-                        Recruiter
-                      </p>
+                      <p className="text-sm font-medium text-gray-900 dark:text-gray-100">Sarah</p>
+                      <p className="text-xs text-gray-500 dark:text-gray-400">Recruiter</p>
                       <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">
                         Viewed your profile
                       </p>
@@ -278,15 +263,11 @@ function JobVoid({ job, company, onSubmit }: AtsSkinProps) {
                       <p className="text-sm font-medium text-gray-900 dark:text-gray-100">
                         Michael
                       </p>
-                      <p className="text-xs text-gray-500 dark:text-gray-400">
-                        Hiring Manager
-                      </p>
+                      <p className="text-xs text-gray-500 dark:text-gray-400">Hiring Manager</p>
                       <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">
                         Skimmed your resume
                       </p>
-                      <p className="text-xs text-gray-400 dark:text-gray-500 mt-0.5">
-                        1 min ago
-                      </p>
+                      <p className="text-xs text-gray-400 dark:text-gray-500 mt-0.5">1 min ago</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-2 mt-2">
@@ -351,9 +332,7 @@ function JobVoid({ job, company, onSubmit }: AtsSkinProps) {
                   </div>
                   <div className="flex justify-between">
                     <span>Applicants</span>
-                    <span className="text-gray-900 dark:text-gray-100">
-                      {Math.floor(Math.random() * 400 + 247)}
-                    </span>
+                    <span className="text-gray-900 dark:text-gray-100">{applicantsCount}</span>
                   </div>
                 </div>
               </div>

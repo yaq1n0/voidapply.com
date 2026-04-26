@@ -6,19 +6,13 @@ import { FileUpload } from '@/components/shared/FileUpload'
 
 function Teamfailor({ job, company, onSubmit }: AtsSkinProps) {
   const [countdown, setCountdown] = useState(30)
-  const [unlocked, setUnlocked] = useState(false)
-  const [videoProgress, setVideoProgress] = useState(0)
+  const unlocked = countdown <= 0
+  const videoProgress = ((30 - countdown) / 30) * 100
 
   useEffect(() => {
     if (countdown > 0) {
-      const timer = setTimeout(() => {
-        setCountdown((c) => c - 1)
-        setVideoProgress((30 - countdown + 1) / 30 * 100)
-      }, 100)
+      const timer = setTimeout(() => setCountdown((c) => c - 1), 100)
       return () => clearTimeout(timer)
-    } else {
-      setUnlocked(true)
-      setVideoProgress(100)
     }
   }, [countdown])
 
@@ -34,7 +28,7 @@ function Teamfailor({ job, company, onSubmit }: AtsSkinProps) {
                 key={i}
                 className="rounded"
                 style={{
-                  backgroundColor: `hsl(${160 + (i * 17) % 60}, 40%, ${20 + (i * 7) % 20}%)`,
+                  backgroundColor: `hsl(${160 + ((i * 17) % 60)}, 40%, ${20 + ((i * 7) % 20)}%)`,
                 }}
               />
             ))}
@@ -74,9 +68,7 @@ function Teamfailor({ job, company, onSubmit }: AtsSkinProps) {
 
         {/* Meet the Team video section */}
         <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-700 p-8">
-          <h2 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-2">
-            Meet the Team
-          </h2>
+          <h2 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-2">Meet the Team</h2>
           <p className="text-xs text-gray-400 dark:text-gray-500 mb-4">
             Please watch this video before applying. Totally optional. (Not optional.)
           </p>
@@ -125,7 +117,8 @@ function Teamfailor({ job, company, onSubmit }: AtsSkinProps) {
 
           {!unlocked && (
             <p className="text-xs text-gray-400 dark:text-gray-500 text-center">
-              Finish watching to unlock your application. Yes, this is real. No, there's no skip button.
+              Finish watching to unlock your application. Yes, this is real. No, there's no skip
+              button.
             </p>
           )}
         </div>

@@ -31,11 +31,12 @@ function stepNumber(phase: Phase): number {
 function AssessmentGauntlet({ onComplete }: RejectionModeProps) {
   const [phase, setPhase] = useState<Phase>('redirect')
   const [progress, setProgress] = useState(0)
-  const startTimeRef = useRef<number>(Date.now())
+  const startTimeRef = useRef<number>(0)
   const [elapsedTime, setElapsedTime] = useState('0:00')
 
   // Track elapsed time for the rejected screen
   useEffect(() => {
+    startTimeRef.current = Date.now()
     const interval = setInterval(() => {
       const secs = Math.floor((Date.now() - startTimeRef.current) / 1000)
       const m = Math.floor(secs / 60)
@@ -60,15 +61,13 @@ function AssessmentGauntlet({ onComplete }: RejectionModeProps) {
   useEffect(() => {
     if (!STEP_PHASES.includes(phase)) return
 
+    let current = 0
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- intentional reset on phase change
     setProgress(0)
     const interval = setInterval(() => {
-      setProgress((p) => {
-        if (p >= 100) {
-          clearInterval(interval)
-          return 100
-        }
-        return p + 5
-      })
+      current = Math.min(100, current + 5)
+      setProgress(current)
+      if (current >= 100) clearInterval(interval)
     }, 100)
 
     const advance = setTimeout(() => {
@@ -194,9 +193,7 @@ function AssessmentGauntlet({ onComplete }: RejectionModeProps) {
         {/* Step 2: Personality Questionnaire */}
         {phase === 'step2' && (
           <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 w-full max-w-lg">
-            <h3 className="text-base font-bold text-gray-800 mb-1">
-              Personality Questionnaire
-            </h3>
+            <h3 className="text-base font-bold text-gray-800 mb-1">Personality Questionnaire</h3>
             <p className="text-xs text-gray-400 mb-4">73 questions • Section 1 of 9</p>
             {[
               'I enjoy completing tasks even when they are assigned by someone who clearly does not understand the task.',
@@ -276,8 +273,8 @@ function AssessmentGauntlet({ onComplete }: RejectionModeProps) {
             <h3 className="text-base font-bold text-gray-800 mb-1">Work Simulation</h3>
             <p className="text-xs text-gray-400 mb-4">Estimated completion time: 4 hours</p>
             <div className="border border-yellow-200 bg-yellow-50 rounded p-3 mb-4 text-sm text-yellow-800">
-              Please complete the following 4-hour spreadsheet exercise. You will not be
-              compensated for this time.
+              Please complete the following 4-hour spreadsheet exercise. You will not be compensated
+              for this time.
             </div>
             <div className="space-y-2 text-sm text-gray-600">
               <div className="flex items-start gap-2">
@@ -289,15 +286,11 @@ function AssessmentGauntlet({ onComplete }: RejectionModeProps) {
               </div>
               <div className="flex items-start gap-2">
                 <span className="text-gray-400 mt-0.5">2.</span>
-                <span>
-                  Create 3 pivot tables, 2 dashboards, and a DCF analysis from scratch
-                </span>
+                <span>Create 3 pivot tables, 2 dashboards, and a DCF analysis from scratch</span>
               </div>
               <div className="flex items-start gap-2">
                 <span className="text-gray-400 mt-0.5">3.</span>
-                <span>
-                  Present your findings to a panel of 8 stakeholders (scheduling TBD)
-                </span>
+                <span>Present your findings to a panel of 8 stakeholders (scheduling TBD)</span>
               </div>
             </div>
             <div className="mt-4 bg-gray-100 rounded h-8 flex items-center justify-center text-gray-400 text-xs">
@@ -347,8 +340,18 @@ function AssessmentGauntlet({ onComplete }: RejectionModeProps) {
         {phase === 'complete' && (
           <div className="text-center max-w-sm">
             <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-4">
-              <svg className="w-8 h-8 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              <svg
+                className="w-8 h-8 text-green-500"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M5 13l4 4L19 7"
+                />
               </svg>
             </div>
             <h2 className="text-xl font-bold text-gray-800 mb-2">Assessment Complete</h2>
@@ -360,8 +363,18 @@ function AssessmentGauntlet({ onComplete }: RejectionModeProps) {
         {phase === 'rejected' && (
           <div className="bg-white rounded-lg shadow-sm border border-red-100 p-8 w-full max-w-lg text-center">
             <div className="w-14 h-14 rounded-full bg-red-100 flex items-center justify-center mx-auto mb-4">
-              <svg className="w-7 h-7 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              <svg
+                className="w-7 h-7 text-red-500"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
               </svg>
             </div>
             <h2 className="text-xl font-bold text-gray-800 mb-2">Not a Match</h2>

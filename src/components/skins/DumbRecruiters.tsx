@@ -6,9 +6,10 @@ import { FileUpload } from '@/components/shared/FileUpload'
 function DumbRecruiters({ job, company, onSubmit }: AtsSkinProps) {
   const [score, setScore] = useState(100)
   const [submitted, setSubmitted] = useState(false)
+  const [yearsExperience] = useState(() => Math.floor(Math.random() * 5) + 8)
+  const [yearsExisted] = useState(() => Math.floor(Math.random() * 3) + 3)
 
-  const handleChange = () =>
-    setScore((s) => Math.max(2, s - Math.floor(Math.random() * 3 + 1)))
+  const handleChange = () => setScore((s) => Math.max(2, s - Math.floor(Math.random() * 3 + 1)))
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
@@ -76,8 +77,7 @@ function DumbRecruiters({ job, company, onSubmit }: AtsSkinProps) {
               className="h-3 rounded-full transition-all duration-300"
               style={{
                 width: `${score}%`,
-                backgroundColor:
-                  score >= 80 ? '#2e7d32' : score >= 50 ? '#f59e0b' : '#ef4444',
+                backgroundColor: score >= 80 ? '#2e7d32' : score >= 50 ? '#f59e0b' : '#ef4444',
               }}
             />
           </div>
@@ -243,14 +243,10 @@ function DumbRecruiters({ job, company, onSubmit }: AtsSkinProps) {
               <div>
                 <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                   Do you have{' '}
-                  <span className="font-bold">
-                    {Math.floor(Math.random() * 5) + 8}+ years of experience
-                  </span>{' '}
-                  with technologies that have existed for{' '}
-                  <span className="font-bold">
-                    {Math.floor(Math.random() * 3) + 3} years
-                  </span>
-                  ? <span className="text-red-500">*</span>
+                  <span className="font-bold">{yearsExperience}+ years of experience</span> with
+                  technologies that have existed for{' '}
+                  <span className="font-bold">{yearsExisted} years</span>?{' '}
+                  <span className="text-red-500">*</span>
                 </label>
                 <select
                   className="w-full border border-gray-300 dark:border-gray-600 rounded-md px-3 py-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-[#1565c0] text-sm"
@@ -340,7 +336,8 @@ function DumbRecruiters({ job, company, onSubmit }: AtsSkinProps) {
           </button>
 
           <p className="text-xs text-gray-300 dark:text-gray-700 text-center">
-            Powered by SmartRecruiters&trade; &mdash; The World&apos;s #1 Hiring Platform&trade; (self-reported)
+            Powered by SmartRecruiters&trade; &mdash; The World&apos;s #1 Hiring Platform&trade;
+            (self-reported)
           </p>
         </form>
       </div>

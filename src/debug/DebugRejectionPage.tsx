@@ -47,6 +47,7 @@ export function DebugRejectionPage() {
 
       <Suspense fallback={<LoadingFallback />}>
         {RejectionComponent ? (
+          // eslint-disable-next-line react-hooks/static-components -- registry holds stable lazy components
           <RejectionComponent {...rejectionProps} />
         ) : (
           <div className="max-w-xl mx-auto px-4 py-20 text-center">

@@ -74,6 +74,7 @@ export function DebugSkinPage() {
 
       <Suspense fallback={<LoadingFallback />}>
         {SkinComponent ? (
+          // eslint-disable-next-line react-hooks/static-components -- registry holds stable lazy components
           <SkinComponent {...skinProps} />
         ) : (
           <div className="max-w-xl mx-auto px-4 py-20 text-center">

@@ -18,20 +18,14 @@ const STEPS = [
 function LinkedOut({ job, company, onSubmit }: AtsSkinProps) {
   const [step, setStep] = useState(0)
   const [applicants, setApplicants] = useState(1248)
-  const [totalSteps, setTotalSteps] = useState(7)
   const [showToast, setShowToast] = useState(false)
+  // Bumps from 7 to 8 once user reaches step 4 (0-indexed)
+  const totalSteps = step >= 3 ? 8 : 7
 
   useEffect(() => {
     const t = setTimeout(() => setApplicants(1249), 1000)
     return () => clearTimeout(t)
   }, [])
-
-  // When user reaches step 4 (0-indexed), bump total from 7 to 8
-  useEffect(() => {
-    if (step === 3) {
-      setTotalSteps(8)
-    }
-  }, [step])
 
   const next = () => {
     if (step < STEPS.length - 1) {
@@ -72,9 +66,7 @@ function LinkedOut({ job, company, onSubmit }: AtsSkinProps) {
           <div className="bg-white dark:bg-gray-800 rounded-b-xl shadow-sm border border-gray-200 dark:border-gray-700 px-6 pb-6">
             {/* Logo placeholder */}
             <div className="w-16 h-16 bg-white dark:bg-gray-700 border-2 border-gray-200 dark:border-gray-600 rounded-lg -mt-8 flex items-center justify-center mb-3">
-              <span className="text-2xl font-bold text-[#0a66c2]">
-                {company.name.charAt(0)}
-              </span>
+              <span className="text-2xl font-bold text-[#0a66c2]">{company.name.charAt(0)}</span>
             </div>
             <div className="flex flex-wrap items-start justify-between gap-3">
               <div>
@@ -142,9 +134,7 @@ function LinkedOut({ job, company, onSubmit }: AtsSkinProps) {
                 </span>
                 <span className="text-xs text-gray-500 dark:text-gray-400">
                   Step {step + 1} of {totalSteps}
-                  {step >= 3 && (
-                    <span className="text-amber-500 ml-1">(we added one)</span>
-                  )}
+                  {step >= 3 && <span className="text-amber-500 ml-1">(we added one)</span>}
                 </span>
               </div>
               {/* Progress bar */}
@@ -154,9 +144,7 @@ function LinkedOut({ job, company, onSubmit }: AtsSkinProps) {
                   style={{ width: `${progressPct}%` }}
                 />
               </div>
-              <p className="text-xs text-gray-400 dark:text-gray-500 mt-1">
-                {STEPS[step]}
-              </p>
+              <p className="text-xs text-gray-400 dark:text-gray-500 mt-1">{STEPS[step]}</p>
             </div>
 
             {/* Step content */}
@@ -181,9 +169,7 @@ function LinkedOut({ job, company, onSubmit }: AtsSkinProps) {
 
               {step === 1 && (
                 <>
-                  <h3 className="text-sm font-semibold text-gray-800 dark:text-gray-200">
-                    Resume
-                  </h3>
+                  <h3 className="text-sm font-semibold text-gray-800 dark:text-gray-200">Resume</h3>
                   <p className="text-xs text-gray-500 dark:text-gray-400">
                     Upload your resume. We will not read it but our ATS will reject it.
                   </p>
@@ -248,10 +234,7 @@ function LinkedOut({ job, company, onSubmit }: AtsSkinProps) {
                       { value: 'na', label: 'Not applicable' },
                     ]}
                   />
-                  <TextInput
-                    label="Visa expiration date (if applicable)"
-                    type="date"
-                  />
+                  <TextInput label="Visa expiration date (if applicable)" type="date" />
                   <p className="text-xs text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-amber-900/20 rounded p-2">
                     Heads up: we just added a new step. You now have {totalSteps} total steps.
                   </p>
@@ -271,31 +254,11 @@ function LinkedOut({ job, company, onSubmit }: AtsSkinProps) {
                     required
                     placeholder="e.g. $80,000 – $120,000"
                   />
-                  <TextInput
-                    label="Years of experience with JavaScript?"
-                    required
-                    type="number"
-                  />
-                  <TextInput
-                    label="Years of experience with TypeScript?"
-                    required
-                    type="number"
-                  />
-                  <TextInput
-                    label="Years of experience with React?"
-                    required
-                    type="number"
-                  />
-                  <TextInput
-                    label="Years of experience with Node.js?"
-                    required
-                    type="number"
-                  />
-                  <TextInput
-                    label="Years of experience with SQL?"
-                    required
-                    type="number"
-                  />
+                  <TextInput label="Years of experience with JavaScript?" required type="number" />
+                  <TextInput label="Years of experience with TypeScript?" required type="number" />
+                  <TextInput label="Years of experience with React?" required type="number" />
+                  <TextInput label="Years of experience with Node.js?" required type="number" />
+                  <TextInput label="Years of experience with SQL?" required type="number" />
                   <SelectInput
                     label="Are you willing to relocate?"
                     required
@@ -317,11 +280,7 @@ function LinkedOut({ job, company, onSubmit }: AtsSkinProps) {
                       { value: 'sometimes', label: 'When needed (= always)' },
                     ]}
                   />
-                  <TextInput
-                    label="Expected start date"
-                    required
-                    type="date"
-                  />
+                  <TextInput label="Expected start date" required type="date" />
                   <TextArea
                     label="Is there anything else you'd like us to know? (We won't read this.)"
                     rows={3}
@@ -331,12 +290,9 @@ function LinkedOut({ job, company, onSubmit }: AtsSkinProps) {
 
               {step === 5 && (
                 <>
-                  <h3 className="text-sm font-semibold text-gray-800 dark:text-gray-200">
-                    Review
-                  </h3>
+                  <h3 className="text-sm font-semibold text-gray-800 dark:text-gray-200">Review</h3>
                   <p className="text-xs text-gray-500 dark:text-gray-400">
-                    Please review the information you've entered. It will be ignored
-                    regardless.
+                    Please review the information you've entered. It will be ignored regardless.
                   </p>
                   <div className="bg-[#f3f2ef] dark:bg-gray-700 rounded-lg p-3 text-xs text-gray-600 dark:text-gray-300 space-y-1">
                     <p>
@@ -350,14 +306,12 @@ function LinkedOut({ job, company, onSubmit }: AtsSkinProps) {
                     </p>
                     <p>
                       <span className="font-medium">Posted:</span>{' '}
-                      <span className="text-amber-600 dark:text-amber-400">
-                        847 days ago
-                      </span>
+                      <span className="text-amber-600 dark:text-amber-400">847 days ago</span>
                     </p>
                   </div>
                   <div className="text-xs text-gray-400 dark:text-gray-500">
-                    By clicking Next, you agree that your data will be stored for 99 years
-                    and reviewed never.
+                    By clicking Next, you agree that your data will be stored for 99 years and
+                    reviewed never.
                   </div>
                 </>
               )}
@@ -371,8 +325,8 @@ function LinkedOut({ job, company, onSubmit }: AtsSkinProps) {
                     You've completed all {totalSteps} steps. You did it. Or did you?
                   </p>
                   <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded p-3 text-xs text-blue-800 dark:text-blue-200">
-                    This job was posted 847 days ago. The position may have already been
-                    filled, cancelled, or forgotten entirely. Good luck!
+                    This job was posted 847 days ago. The position may have already been filled,
+                    cancelled, or forgotten entirely. Good luck!
                   </div>
                   <SelectInput
                     label="How did you hear about this role?"
@@ -414,9 +368,7 @@ function LinkedOut({ job, company, onSubmit }: AtsSkinProps) {
           <span className="text-green-400">&#10003;</span>
           <span>
             Application sent!{' '}
-            <span className="text-amber-300">
-              This listing was posted 847 days ago.
-            </span>
+            <span className="text-amber-300">This listing was posted 847 days ago.</span>
           </span>
         </div>
       )}
