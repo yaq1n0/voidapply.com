@@ -35,7 +35,9 @@ function BamBoom({ job, company, onSubmit }: AtsSkinProps) {
             We've received your application and our People team will be in touch soon. Or not. But
             we appreciate your vulnerability.
           </p>
-          <p className="text-xs text-gray-300 dark:text-gray-600 mt-6">Powered by BambooHR&trade;</p>
+          <p className="text-xs text-gray-300 dark:text-gray-600 mt-6">
+            Powered by BambooHR&trade;
+          </p>
         </div>
       </div>
     )
@@ -104,10 +106,7 @@ function BamBoom({ job, company, onSubmit }: AtsSkinProps) {
                 placeholder="We'll use this to send automated rejection warmth"
               />
               <TextInput label="Phone Number" type="tel" />
-              <TextInput
-                label="City & State"
-                placeholder="Where you currently put your plants"
-              />
+              <TextInput label="City & State" placeholder="Where you currently put your plants" />
             </div>
           </div>
 

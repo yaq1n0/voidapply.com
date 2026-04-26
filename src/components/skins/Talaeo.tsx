@@ -17,7 +17,16 @@ function Talaeo({ job, company, onSubmit }: AtsSkinProps) {
   const minutes = Math.floor(timeLeft / 60)
   const seconds = timeLeft % 60
 
-  const TALEO_TABS = ['My Profile', 'Resume', 'Work History', 'Education', 'Screening', 'Certifications', 'Review', 'Submit']
+  const TALEO_TABS = [
+    'My Profile',
+    'Resume',
+    'Work History',
+    'Education',
+    'Screening',
+    'Certifications',
+    'Review',
+    'Submit',
+  ]
   const currentTab = 2 // static — stuck at step 3
 
   return (
@@ -34,11 +43,12 @@ function Talaeo({ job, company, onSubmit }: AtsSkinProps) {
           <div
             key={i}
             className={`px-3 py-1.5 text-xs font-medium border-t border-l border-r cursor-default select-none whitespace-nowrap
-              ${i === currentTab
-                ? 'bg-white dark:bg-gray-900 border-gray-400 dark:border-gray-600 text-[#003399] dark:text-blue-400 -mb-px pb-2 relative z-10'
-                : i < currentTab
-                  ? 'bg-gray-300 dark:bg-gray-700 border-gray-400 dark:border-gray-600 text-gray-600 dark:text-gray-400'
-                  : 'bg-gray-200 dark:bg-gray-800 border-gray-300 dark:border-gray-700 text-gray-400 dark:text-gray-600'
+              ${
+                i === currentTab
+                  ? 'bg-white dark:bg-gray-900 border-gray-400 dark:border-gray-600 text-[#003399] dark:text-blue-400 -mb-px pb-2 relative z-10'
+                  : i < currentTab
+                    ? 'bg-gray-300 dark:bg-gray-700 border-gray-400 dark:border-gray-600 text-gray-600 dark:text-gray-400'
+                    : 'bg-gray-200 dark:bg-gray-800 border-gray-300 dark:border-gray-700 text-gray-400 dark:text-gray-600'
               }`}
           >
             {i < currentTab ? `✓ ${i + 1}. ${tab}` : `${i + 1}. ${tab}`}

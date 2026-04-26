@@ -119,7 +119,10 @@ function GreenHouseOfPain({ job, company, onSubmit }: AtsSkinProps) {
         {/* Powered by Greenhouse badge */}
         <div className="flex justify-end px-6 py-3 border-t border-gray-100 dark:border-gray-800">
           <span className="text-xs text-gray-400 dark:text-gray-600 flex items-center gap-1.5">
-            <span className="inline-block w-3 h-3 rounded-full" style={{ backgroundColor: '#24a47f' }} />
+            <span
+              className="inline-block w-3 h-3 rounded-full"
+              style={{ backgroundColor: '#24a47f' }}
+            />
             Powered by Greenhouse
           </span>
         </div>

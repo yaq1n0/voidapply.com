@@ -34,7 +34,10 @@ function WorkNight({ job, company, onSubmit }: AtsSkinProps) {
   return (
     <div className="max-w-2xl mx-auto px-4 py-8">
       {/* Header — dark navy #003b5c per spec */}
-      <div className="text-white px-6 py-4 rounded-t-lg flex items-center justify-between" style={{ backgroundColor: '#003b5c' }}>
+      <div
+        className="text-white px-6 py-4 rounded-t-lg flex items-center justify-between"
+        style={{ backgroundColor: '#003b5c' }}
+      >
         <div>
           <h1 className="text-lg font-bold">
             <span className="text-orange-400">Work</span>Night&trade;
@@ -45,7 +48,9 @@ function WorkNight({ job, company, onSubmit }: AtsSkinProps) {
         </div>
         <div className="text-xs text-gray-300 flex items-center gap-3">
           <span>My Applications</span>
-          <div className="w-7 h-7 rounded-full bg-gray-500 flex items-center justify-center text-xs">👤</div>
+          <div className="w-7 h-7 rounded-full bg-gray-500 flex items-center justify-center text-xs">
+            👤
+          </div>
         </div>
       </div>
 
@@ -61,14 +66,22 @@ function WorkNight({ job, company, onSubmit }: AtsSkinProps) {
                 ${i === step ? 'bg-blue-600 text-white' : i < step ? 'bg-white dark:bg-gray-700 text-blue-600 dark:text-blue-400 border border-blue-300 dark:border-blue-600 cursor-pointer hover:bg-blue-50' : 'text-gray-400 dark:text-gray-500 cursor-not-allowed'}`}
             >
               {i < step && <span>✓</span>}
-              <span>{i + 1}. {s}</span>
+              <span>
+                {i + 1}. {s}
+              </span>
             </button>
           ))}
         </div>
       </div>
 
       {/* Form */}
-      <form className="border border-t-0 border-gray-200 dark:border-gray-700 rounded-b-lg p-6 bg-white dark:bg-gray-900" onSubmit={e => { e.preventDefault(); next() }}>
+      <form
+        className="border border-t-0 border-gray-200 dark:border-gray-700 rounded-b-lg p-6 bg-white dark:bg-gray-900"
+        onSubmit={(e) => {
+          e.preventDefault()
+          next()
+        }}
+      >
         <div key={step}>
           {step === 0 && (
             <div className="space-y-4">

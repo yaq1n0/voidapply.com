@@ -28,7 +28,7 @@ function InterviewThenGhost({ job, onComplete }: RejectionModeProps) {
   useEffect(() => {
     if (phase !== 'timeline') return
     if (visibleStages < stages.length - 1) {
-      const t = setTimeout(() => setVisibleStages(s => s + 1), 600)
+      const t = setTimeout(() => setVisibleStages((s) => s + 1), 600)
       return () => clearTimeout(t)
     } else if (visibleStages === stages.length - 1) {
       // Show last stage (with spinner) for 2s then go blank
@@ -71,9 +71,12 @@ function InterviewThenGhost({ job, onComplete }: RejectionModeProps) {
   }, [phase, onComplete])
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto transition-colors duration-700"
-      style={{ backgroundColor: phase === 'blank' ? '#ffffff' : phase === 'ghost' ? '#111827' : '#111827' }}>
-
+    <div
+      className="fixed inset-0 z-50 overflow-y-auto transition-colors duration-700"
+      style={{
+        backgroundColor: phase === 'blank' ? '#ffffff' : phase === 'ghost' ? '#111827' : '#111827',
+      }}
+    >
       {/* Timeline phase */}
       {phase === 'timeline' && (
         <div className="min-h-full flex flex-col justify-center max-w-xl mx-auto px-6 py-12">
@@ -97,19 +100,26 @@ function InterviewThenGhost({ job, onComplete }: RejectionModeProps) {
                       className={`w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0
                         ${isPassed ? 'bg-green-500 text-white' : 'bg-gray-600 text-gray-300'}`}
                     >
-                      {isPassed ? '✓' : (
+                      {isPassed ? (
+                        '✓'
+                      ) : (
                         <span className="inline-block animate-spin text-base leading-none">⟳</span>
                       )}
                     </div>
                     {!isLast && (
-                      <div className="w-0.5 bg-gray-700 flex-1 my-1" style={{ minHeight: '24px' }} />
+                      <div
+                        className="w-0.5 bg-gray-700 flex-1 my-1"
+                        style={{ minHeight: '24px' }}
+                      />
                     )}
                   </div>
 
                   {/* Stage content */}
                   <div className="pb-6">
                     <p className="font-semibold text-white text-sm">{stage.name}</p>
-                    <p className={`text-xs mt-0.5 ${isPassed ? 'text-green-400' : 'text-gray-400'}`}>
+                    <p
+                      className={`text-xs mt-0.5 ${isPassed ? 'text-green-400' : 'text-gray-400'}`}
+                    >
                       {isPassed ? 'Passed — Congratulations!' : 'Evaluating...'}
                     </p>
                   </div>
@@ -121,9 +131,7 @@ function InterviewThenGhost({ job, onComplete }: RejectionModeProps) {
       )}
 
       {/* Blank phase — intentionally empty */}
-      {phase === 'blank' && (
-        <div className="min-h-full" />
-      )}
+      {phase === 'blank' && <div className="min-h-full" />}
 
       {/* Ghost phase */}
       {phase === 'ghost' && (

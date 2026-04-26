@@ -12,7 +12,9 @@ function LeverToNowhere({ job, company, onSubmit }: AtsSkinProps) {
     <div className="min-h-screen bg-gray-50 dark:bg-gray-950">
       {/* Top nav bar */}
       <div className="border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 px-6 py-3">
-        <span className="font-bold text-[#5b2be0] text-lg tracking-tight">LeverToNowhere&trade;</span>
+        <span className="font-bold text-[#5b2be0] text-lg tracking-tight">
+          LeverToNowhere&trade;
+        </span>
         <span className="text-xs text-gray-400 ml-2">Powered by AI synergy</span>
       </div>
 
@@ -117,11 +119,17 @@ function LeverToNowhere({ job, company, onSubmit }: AtsSkinProps) {
                     options={[
                       { value: 'yes', label: 'Yes — I have no attachments' },
                       { value: 'no', label: 'No — I have a life' },
-                      { value: 'maybe', label: "Maybe — depends on the compensation (it won't be enough)" },
+                      {
+                        value: 'maybe',
+                        label: "Maybe — depends on the compensation (it won't be enough)",
+                      },
                     ]}
                   />
                   <TextInput label="Pronouns" placeholder="Entirely optional but we will note it" />
-                  <TextInput label="Emergency Contact Name" placeholder="Someone who will miss you" />
+                  <TextInput
+                    label="Emergency Contact Name"
+                    placeholder="Someone who will miss you"
+                  />
                   <TextInput
                     label="Emergency Contact Phone"
                     placeholder="In case we overwork you"
@@ -130,9 +138,12 @@ function LeverToNowhere({ job, company, onSubmit }: AtsSkinProps) {
                   <SelectInput
                     label="How did you hear about us?"
                     options={[
-                      { value: 'linkedin', label: "LinkedIn (where hope goes to die)" },
-                      { value: 'referral', label: 'Referral (still won\'t help)' },
-                      { value: 'glassdoor', label: 'Glassdoor (you read the reviews and applied anyway?)' },
+                      { value: 'linkedin', label: 'LinkedIn (where hope goes to die)' },
+                      { value: 'referral', label: "Referral (still won't help)" },
+                      {
+                        value: 'glassdoor',
+                        label: 'Glassdoor (you read the reviews and applied anyway?)',
+                      },
                       { value: 'dream', label: 'It came to me in a fever dream' },
                     ]}
                   />
@@ -166,8 +177,14 @@ function LeverToNowhere({ job, company, onSubmit }: AtsSkinProps) {
                       { value: 'cursor', label: 'Cursor — just let the AI do it' },
                     ]}
                   />
-                  <TextInput label="Years of Experience in React" placeholder="e.g. 5 (we want 10)" />
-                  <TextInput label="Years of Experience in TypeScript" placeholder="e.g. 3 (we want 8)" />
+                  <TextInput
+                    label="Years of Experience in React"
+                    placeholder="e.g. 5 (we want 10)"
+                  />
+                  <TextInput
+                    label="Years of Experience in TypeScript"
+                    placeholder="e.g. 3 (we want 8)"
+                  />
                   <TextInput
                     label="Years of Experience in Kubernetes"
                     placeholder="We put this here to scare you"
@@ -235,7 +252,8 @@ function LeverToNowhere({ job, company, onSubmit }: AtsSkinProps) {
             </button>
 
             <p className="text-xs text-gray-400 dark:text-gray-500 text-center pb-4">
-              LeverToNowhere&trade; &mdash; moving your application to a better place (the archive folder).
+              LeverToNowhere&trade; &mdash; moving your application to a better place (the archive
+              folder).
             </p>
           </form>
         </div>

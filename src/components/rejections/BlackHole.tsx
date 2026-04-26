@@ -35,11 +35,7 @@ function BlackHole({ job, company, onComplete }: RejectionModeProps) {
   ]
 
   const bgClass =
-    phase === 'normal'
-      ? 'bg-gray-100'
-      : phase === 'pulling'
-        ? 'bg-gray-900'
-        : 'bg-black'
+    phase === 'normal' ? 'bg-gray-100' : phase === 'pulling' ? 'bg-gray-900' : 'bg-black'
 
   return (
     <div

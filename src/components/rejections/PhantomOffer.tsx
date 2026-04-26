@@ -9,7 +9,9 @@ const DEFAULT_CONTENT = {
 }
 
 function PhantomOffer({ job, company, onComplete }: RejectionModeProps) {
-  const [phase, setPhase] = useState<'offer-email' | 'countdown' | 'waiting' | 'rescission' | 'done'>('offer-email')
+  const [phase, setPhase] = useState<
+    'offer-email' | 'countdown' | 'waiting' | 'rescission' | 'done'
+  >('offer-email')
   const [hours, setHours] = useState(72)
   const [waitingLine, setWaitingLine] = useState(0)
 
@@ -27,7 +29,7 @@ function PhantomOffer({ job, company, onComplete }: RejectionModeProps) {
   useEffect(() => {
     if (phase !== 'countdown') return
     const t = setInterval(() => {
-      setHours(h => {
+      setHours((h) => {
         if (h <= 1) {
           clearInterval(t)
           setPhase('waiting')
@@ -69,14 +71,13 @@ function PhantomOffer({ job, company, onComplete }: RejectionModeProps) {
   const padTwo = (n: number) => String(n).padStart(2, '0')
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto transition-colors duration-500"
+    <div
+      className="fixed inset-0 z-50 overflow-y-auto transition-colors duration-500"
       style={{
         backgroundColor:
-          phase === 'countdown' ? '#111827'
-          : phase === 'waiting' ? '#374151'
-          : '#f3f4f6'
-      }}>
-
+          phase === 'countdown' ? '#111827' : phase === 'waiting' ? '#374151' : '#f3f4f6',
+      }}
+    >
       {/* Offer email phase */}
       {phase === 'offer-email' && (
         <div className="min-h-full flex items-center justify-center px-4 py-12">
@@ -108,22 +109,36 @@ function PhantomOffer({ job, company, onComplete }: RejectionModeProps) {
             <div className="px-6 py-6 text-sm text-gray-700 dark:text-gray-300 leading-relaxed space-y-4">
               <p>Hi there!</p>
               <p>
-                I'm absolutely thrilled to let you know that we'd like to extend
-                an offer for the <strong>{content.jobTitle}</strong> position at{' '}
-                <strong>{company.name}</strong>!
+                I'm absolutely thrilled to let you know that we'd like to extend an offer for the{' '}
+                <strong>{content.jobTitle}</strong> position at <strong>{company.name}</strong>!
               </p>
               <div className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg p-4 space-y-1.5 text-sm">
-                <p><span className="font-semibold text-gray-800 dark:text-gray-200">Compensation:</span> {content.fakeSalary}</p>
-                <p><span className="font-semibold text-gray-800 dark:text-gray-200">Start date:</span> 2 weeks from today</p>
-                <p><span className="font-semibold text-gray-800 dark:text-gray-200">Location:</span> Hybrid (3 days in office, 2 remote)</p>
+                <p>
+                  <span className="font-semibold text-gray-800 dark:text-gray-200">
+                    Compensation:
+                  </span>{' '}
+                  {content.fakeSalary}
+                </p>
+                <p>
+                  <span className="font-semibold text-gray-800 dark:text-gray-200">
+                    Start date:
+                  </span>{' '}
+                  2 weeks from today
+                </p>
+                <p>
+                  <span className="font-semibold text-gray-800 dark:text-gray-200">Location:</span>{' '}
+                  Hybrid (3 days in office, 2 remote)
+                </p>
               </div>
               <p>
-                We're SO excited to have you join the team. Please expect formal
-                paperwork by <strong>{content.promisedTimeline}</strong> 🎉
+                We're SO excited to have you join the team. Please expect formal paperwork by{' '}
+                <strong>{content.promisedTimeline}</strong> 🎉
               </p>
               <div className="pt-2">
                 <p>Warmly,</p>
-                <p className="font-medium text-gray-900 dark:text-gray-100 mt-1">{content.recruiterName}</p>
+                <p className="font-medium text-gray-900 dark:text-gray-100 mt-1">
+                  {content.recruiterName}
+                </p>
                 <p className="text-gray-500 dark:text-gray-400">{company.name}</p>
               </div>
             </div>
@@ -144,14 +159,18 @@ function PhantomOffer({ job, company, onComplete }: RejectionModeProps) {
             <span className="text-gray-500 text-5xl mx-1">:</span>
             00
           </div>
-          <p className="text-gray-500 text-xs mt-4 tracking-widest uppercase">Hours : Minutes : Seconds</p>
+          <p className="text-gray-500 text-xs mt-4 tracking-widest uppercase">
+            Hours : Minutes : Seconds
+          </p>
         </div>
       )}
 
       {/* Waiting phase */}
       {phase === 'waiting' && (
         <div className="min-h-full flex flex-col items-center justify-center px-4 py-12 gap-6">
-          <div className="text-5xl animate-spin" style={{ animationDuration: '2s' }}>🕐</div>
+          <div className="text-5xl animate-spin" style={{ animationDuration: '2s' }}>
+            🕐
+          </div>
           {waitingLine >= 1 && (
             <p className="text-white text-lg font-medium">Waiting for paperwork...</p>
           )}
@@ -192,16 +211,18 @@ function PhantomOffer({ job, company, onComplete }: RejectionModeProps) {
             <div className="px-6 py-6 text-sm text-gray-700 dark:text-gray-300 leading-relaxed space-y-4">
               <p>Hi,</p>
               <p>
-                After some internal restructuring, we've made the difficult
-                decision to put this role on hold.
+                After some internal restructuring, we've made the difficult decision to put this
+                role on hold.
               </p>
               <p>
-                You were our top candidate and we were truly impressed by your
-                background. We hope to reconnect when the position reopens.
+                You were our top candidate and we were truly impressed by your background. We hope
+                to reconnect when the position reopens.
               </p>
               <p>We wish you all the best.</p>
               <div className="pt-2">
-                <p className="font-medium text-gray-900 dark:text-gray-100">{content.recruiterName}</p>
+                <p className="font-medium text-gray-900 dark:text-gray-100">
+                  {content.recruiterName}
+                </p>
               </div>
             </div>
           </div>

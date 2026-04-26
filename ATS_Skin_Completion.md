@@ -100,20 +100,20 @@ All 6 new rejection modes implemented and screenshot-verified.
 
 ### Visual verification per skin
 
-| Skin | Primary/CTA color | Layout | ≥3 quirks | Dark mode |
-|---|---|---|---|---|
-| worknight | ✅ `#0875e1` | ✅ multi-step-wizard | ✅ | ✅ |
-| greenhouse-of-pain | ✅ `#24a47f` | ✅ single-long-form | ✅ | ✅ |
-| talaeo | ✅ `#005b99` | ✅ multi-step-wizard-legacy | ✅ | ✅ |
-| linked-out | ✅ `#0a66c2` | ✅ multi-step-modal | ✅ | ✅ |
-| ashbye-hq | ✅ `#000000` | ✅ single-clean-form | ✅ | ✅ |
-| byebob | ✅ `#ff5a5f` | ✅ friendly-card-form | ✅ | ✅ |
-| rejectable | ✅ `#ff4940` | ✅ card-sections | ✅ | ✅ |
-| lever-to-nowhere | ✅ `#5b2be0` | ✅ two-column | ✅ | ✅ |
-| bamboom | ✅ `#73ac3a` | ✅ clean-single-form | ✅ | ✅ |
-| teamfailor | ✅ `#4ac4a1` | ✅ branded-career-page | ✅ | ✅ |
-| icantms | ✅ `#0066cc` | ✅ multi-step-wizard-enterprise | ✅ | ✅ |
-| dumb-recruiters | ✅ `#1565c0` | ✅ single-page-with-sections | ✅ | ✅ |
-| jobvoid | ✅ `#e31837` | ✅ single-page-legacy-modern | ✅ | ✅ |
+| Skin               | Primary/CTA color | Layout                          | ≥3 quirks | Dark mode |
+| ------------------ | ----------------- | ------------------------------- | --------- | --------- |
+| worknight          | ✅ `#0875e1`      | ✅ multi-step-wizard            | ✅        | ✅        |
+| greenhouse-of-pain | ✅ `#24a47f`      | ✅ single-long-form             | ✅        | ✅        |
+| talaeo             | ✅ `#005b99`      | ✅ multi-step-wizard-legacy     | ✅        | ✅        |
+| linked-out         | ✅ `#0a66c2`      | ✅ multi-step-modal             | ✅        | ✅        |
+| ashbye-hq          | ✅ `#000000`      | ✅ single-clean-form            | ✅        | ✅        |
+| byebob             | ✅ `#ff5a5f`      | ✅ friendly-card-form           | ✅        | ✅        |
+| rejectable         | ✅ `#ff4940`      | ✅ card-sections                | ✅        | ✅        |
+| lever-to-nowhere   | ✅ `#5b2be0`      | ✅ two-column                   | ✅        | ✅        |
+| bamboom            | ✅ `#73ac3a`      | ✅ clean-single-form            | ✅        | ✅        |
+| teamfailor         | ✅ `#4ac4a1`      | ✅ branded-career-page          | ✅        | ✅        |
+| icantms            | ✅ `#0066cc`      | ✅ multi-step-wizard-enterprise | ✅        | ✅        |
+| dumb-recruiters    | ✅ `#1565c0`      | ✅ single-page-with-sections    | ✅        | ✅        |
+| jobvoid            | ✅ `#e31837`      | ✅ single-page-legacy-modern    | ✅        | ✅        |
 
 **Reference:** `ATS_UI_reference.md` is the ground truth for all spec details (colors, layout, quirks).

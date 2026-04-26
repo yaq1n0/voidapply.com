@@ -68,10 +68,7 @@ function AshbyeHQ({ job, company, onSubmit }: AtsSkinProps) {
                 </div>
                 <TextInput label="Email" required type="email" />
                 <TextInput label="Phone" type="tel" />
-                <TextInput
-                  label="Location"
-                  placeholder="City, Country"
-                />
+                <TextInput label="Location" placeholder="City, Country" />
               </section>
 
               <hr className="border-gray-100 dark:border-gray-800" />
@@ -92,18 +89,9 @@ function AshbyeHQ({ job, company, onSubmit }: AtsSkinProps) {
                 <h2 className="text-xs font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-widest">
                   Links
                 </h2>
-                <TextInput
-                  label="LinkedIn"
-                  placeholder="https://linkedin.com/in/you"
-                />
-                <TextInput
-                  label="Personal Website / Portfolio"
-                  placeholder="https://"
-                />
-                <TextInput
-                  label="GitHub"
-                  placeholder="https://github.com/you"
-                />
+                <TextInput label="LinkedIn" placeholder="https://linkedin.com/in/you" />
+                <TextInput label="Personal Website / Portfolio" placeholder="https://" />
+                <TextInput label="GitHub" placeholder="https://github.com/you" />
               </section>
 
               <hr className="border-gray-100 dark:border-gray-800" />
@@ -129,17 +117,11 @@ function AshbyeHQ({ job, company, onSubmit }: AtsSkinProps) {
                   />
                   <div className="flex items-center justify-between mt-1">
                     <div>
-                      {tooLong && (
-                        <p className="text-xs text-red-500">
-                          Please be concise.
-                        </p>
-                      )}
+                      {tooLong && <p className="text-xs text-red-500">Please be concise.</p>}
                     </div>
                     <p
                       className={`text-xs ${
-                        tooLong
-                          ? 'text-red-500'
-                          : 'text-gray-400 dark:text-gray-500'
+                        tooLong ? 'text-red-500' : 'text-gray-400 dark:text-gray-500'
                       }`}
                     >
                       {whyText.length.toLocaleString()} / 10,000
@@ -184,8 +166,8 @@ function AshbyeHQ({ job, company, onSubmit }: AtsSkinProps) {
                               isActive
                                 ? 'border-black dark:border-white bg-black dark:bg-white'
                                 : isNext
-                                ? 'border-gray-400 dark:border-gray-500 bg-white dark:bg-gray-950'
-                                : 'border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-950'
+                                  ? 'border-gray-400 dark:border-gray-500 bg-white dark:bg-gray-950'
+                                  : 'border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-950'
                             }`}
                           >
                             {isActive && (
@@ -197,10 +179,10 @@ function AshbyeHQ({ job, company, onSubmit }: AtsSkinProps) {
                               isActive
                                 ? 'font-semibold text-gray-900 dark:text-gray-100'
                                 : isNext
-                                ? 'text-gray-500 dark:text-gray-400'
-                                : isFaded
-                                ? 'text-gray-300 dark:text-gray-600'
-                                : 'text-gray-400'
+                                  ? 'text-gray-500 dark:text-gray-400'
+                                  : isFaded
+                                    ? 'text-gray-300 dark:text-gray-600'
+                                    : 'text-gray-400'
                             }`}
                           >
                             {stage.label}
@@ -234,9 +216,7 @@ function AshbyeHQ({ job, company, onSubmit }: AtsSkinProps) {
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-400 dark:text-gray-500">Type</span>
-                    <span className="text-gray-700 dark:text-gray-300 font-medium">
-                      {job.type}
-                    </span>
+                    <span className="text-gray-700 dark:text-gray-300 font-medium">{job.type}</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-400 dark:text-gray-500">Location</span>
@@ -253,9 +233,7 @@ function AshbyeHQ({ job, company, onSubmit }: AtsSkinProps) {
 
       {/* Footer */}
       <div className="border-t border-gray-100 dark:border-gray-800 py-6 text-center">
-        <p className="text-xs text-gray-300 dark:text-gray-600">
-          Powered by Ashbye
-        </p>
+        <p className="text-xs text-gray-300 dark:text-gray-600">Powered by Ashbye</p>
       </div>
     </div>
   )

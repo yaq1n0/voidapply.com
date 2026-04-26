@@ -8,14 +8,17 @@ function CultureFit({ job, company, onComplete }: RejectionModeProps) {
   const [completedStages, setCompletedStages] = useState(0)
 
   const content = job.rejectionContent['culture-fit']
-  const recruiterContent = content ?? { recruiterName: 'Alex from Talent', stageReached: 'Final Round' }
+  const recruiterContent = content ?? {
+    recruiterName: 'Alex from Talent',
+    stageReached: 'Final Round',
+  }
   const companyEmail = company.name.toLowerCase().replace(/\s+/g, '') + '.com'
 
   // Stage racing animation
   useEffect(() => {
     if (phase !== 'racing') return
     if (completedStages < stages.length) {
-      const t = setTimeout(() => setCompletedStages(s => s + 1), 400)
+      const t = setTimeout(() => setCompletedStages((s) => s + 1), 400)
       return () => clearTimeout(t)
     } else {
       const t = setTimeout(() => setPhase('pending'), 500)
@@ -55,9 +58,7 @@ function CultureFit({ job, company, onComplete }: RejectionModeProps) {
               Application Status Dashboard — {company.name}
             </span>
           </div>
-          <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
-            Hiring Progress
-          </h1>
+          <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100">Hiring Progress</h1>
         </div>
 
         {/* Racing / Pending phase */}
@@ -71,24 +72,24 @@ function CultureFit({ job, company, onComplete }: RejectionModeProps) {
                 <div key={stage} className="flex items-center gap-3">
                   <div
                     className={`w-7 h-7 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 transition-all duration-300
-                      ${i < completedStages
-                        ? 'bg-green-500 text-white'
-                        : 'bg-gray-100 dark:bg-gray-700 text-gray-400'
+                      ${
+                        i < completedStages
+                          ? 'bg-green-500 text-white'
+                          : 'bg-gray-100 dark:bg-gray-700 text-gray-400'
                       }`}
                   >
                     {i < completedStages ? '✓' : i + 1}
                   </div>
                   <span
                     className={`text-sm font-medium transition-colors duration-300
-                      ${i < completedStages
-                        ? 'text-gray-900 dark:text-gray-100'
-                        : 'text-gray-400 dark:text-gray-600'
+                      ${
+                        i < completedStages
+                          ? 'text-gray-900 dark:text-gray-100'
+                          : 'text-gray-400 dark:text-gray-600'
                       }`}
                   >
                     {stage}
-                    {i < completedStages && (
-                      <span className="ml-2 text-green-500 text-xs">✓</span>
-                    )}
+                    {i < completedStages && <span className="ml-2 text-green-500 text-xs">✓</span>}
                   </span>
                 </div>
               ))}
@@ -145,12 +146,12 @@ function CultureFit({ job, company, onComplete }: RejectionModeProps) {
             <div className="px-6 py-6 text-sm text-gray-700 dark:text-gray-300 leading-relaxed space-y-4">
               <p>Dear Candidate,</p>
               <p>
-                After careful consideration, we've decided to move forward with
-                candidates who are a stronger <strong>cultural fit</strong> for our team.
+                After careful consideration, we've decided to move forward with candidates who are a
+                stronger <strong>cultural fit</strong> for our team.
               </p>
               <p>
-                We genuinely enjoyed learning about your background and wish you
-                the best in your search.
+                We genuinely enjoyed learning about your background and wish you the best in your
+                search.
               </p>
               <div className="pt-2">
                 <p>Best regards,</p>

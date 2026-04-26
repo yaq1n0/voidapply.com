@@ -104,8 +104,7 @@ function IcantMS({ job, company, onSubmit }: AtsSkinProps) {
             Apply: {job.title}
           </h1>
           <p className="text-sm text-gray-500 dark:text-gray-400">
-            {company.name} &mdash; Req #{' '}
-            <span className="font-mono">REQ-2024-847291-A</span>
+            {company.name} &mdash; Req # <span className="font-mono">REQ-2024-847291-A</span>
           </p>
         </div>
       </div>
@@ -131,9 +130,7 @@ function IcantMS({ job, company, onSubmit }: AtsSkinProps) {
                           : 'text-gray-400 dark:text-gray-600 cursor-default'
                     }`}
                   >
-                    <span className="text-sm font-bold">
-                      {isComplete ? '✓' : num}
-                    </span>
+                    <span className="text-sm font-bold">{isComplete ? '✓' : num}</span>
                     <span className="mt-0.5 leading-tight text-center">{label}</span>
                   </button>
                   {i < TOTAL_STEPS - 1 && (
@@ -188,15 +185,15 @@ function IcantMS({ job, company, onSubmit }: AtsSkinProps) {
                     options={[
                       {
                         value: 'pet',
-                        label: "What was the name of your first pet?",
+                        label: 'What was the name of your first pet?',
                       },
                       {
                         value: 'street',
-                        label: "What street did you grow up on?",
+                        label: 'What street did you grow up on?',
                       },
                       {
                         value: 'school',
-                        label: "What was the name of your elementary school?",
+                        label: 'What was the name of your elementary school?',
                       },
                       {
                         value: 'mother',
@@ -204,11 +201,7 @@ function IcantMS({ job, company, onSubmit }: AtsSkinProps) {
                       },
                     ]}
                   />
-                  <TextInput
-                    label="Security Answer"
-                    required
-                    placeholder="Enter your answer"
-                  />
+                  <TextInput label="Security Answer" required placeholder="Enter your answer" />
                   <div className="bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-700 rounded p-3 text-xs text-yellow-800 dark:text-yellow-300">
                     <strong>Note:</strong> Your account will be locked after 3 failed login
                     attempts. To unlock, call 1-800-555-ICIMS during business hours (EST only).
@@ -300,9 +293,7 @@ function IcantMS({ job, company, onSubmit }: AtsSkinProps) {
                         <p className="font-semibold mb-1">
                           AI parsing complete. 0 fields populated.
                         </p>
-                        <p>
-                          Please re-enter your resume manually. All fields below are required.
-                        </p>
+                        <p>Please re-enter your resume manually. All fields below are required.</p>
                       </div>
                       <TextInput label="Full Name (from resume)" required />
                       <TextInput label="Email (from resume)" required type="email" />
@@ -429,13 +420,10 @@ function IcantMS({ job, company, onSubmit }: AtsSkinProps) {
                       label: String(2025 - i),
                     }))}
                   />
-                  <TextInput
-                    label="GPA (on a 4.0 scale)"
-                    required
-                    placeholder="e.g., 3.82"
-                  />
+                  <TextInput label="GPA (on a 4.0 scale)" required placeholder="e.g., 3.82" />
                   <div className="text-xs text-gray-400 dark:text-gray-500 -mt-2">
-                    Note: GPA verification may be conducted. Rounding up is considered falsification.
+                    Note: GPA verification may be conducted. Rounding up is considered
+                    falsification.
                   </div>
                 </>
               )}
@@ -728,8 +716,8 @@ function IcantMS({ job, company, onSubmit }: AtsSkinProps) {
         </div>
 
         <p className="text-xs text-gray-300 dark:text-gray-700 text-center mt-4">
-          Powered by iCIMS Talent Cloud&trade; &mdash; Enterprise Hiring Since 2000 &mdash;
-          Average applicant completion time: 73 minutes
+          Powered by iCIMS Talent Cloud&trade; &mdash; Enterprise Hiring Since 2000 &mdash; Average
+          applicant completion time: 73 minutes
         </p>
       </div>
     </div>

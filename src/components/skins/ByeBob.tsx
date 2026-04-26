@@ -40,9 +40,7 @@ function ByeBob({ job, company, onSubmit }: AtsSkinProps) {
             {bobGone ? (
               <div>
                 <p className="text-6xl mb-4">😬</p>
-                <p className="text-2xl font-bold text-gray-800 dark:text-gray-100">
-                  Oops
-                </p>
+                <p className="text-2xl font-bold text-gray-800 dark:text-gray-100">Oops</p>
                 <p className="text-gray-500 dark:text-gray-400 mt-2">
                   Looks like Bob isn't home right now.
                 </p>
@@ -61,20 +59,14 @@ function ByeBob({ job, company, onSubmit }: AtsSkinProps) {
 
       {/* Header */}
       <div className="bg-[#ff5a5f] px-6 py-10 text-white text-center">
-        <p className="text-sm uppercase tracking-widest opacity-80 mb-1">
-          {company.name}
-        </p>
+        <p className="text-sm uppercase tracking-widest opacity-80 mb-1">{company.name}</p>
         <h1 className="text-3xl font-extrabold">{job.title}</h1>
-        <p className="mt-3 text-lg font-medium opacity-90">
-          We'd love to meet you! 👋
-        </p>
+        <p className="mt-3 text-lg font-medium opacity-90">We'd love to meet you! 👋</p>
         <div className="flex flex-wrap justify-center gap-2 mt-4">
           <span className="bg-white/20 text-white text-xs px-3 py-1 rounded-full">
             {job.location}
           </span>
-          <span className="bg-white/20 text-white text-xs px-3 py-1 rounded-full">
-            {job.type}
-          </span>
+          <span className="bg-white/20 text-white text-xs px-3 py-1 rounded-full">{job.type}</span>
           <span className="bg-white/20 text-white text-xs px-3 py-1 rounded-full">
             {job.salary}
           </span>
@@ -90,8 +82,7 @@ function ByeBob({ job, company, onSubmit }: AtsSkinProps) {
               Nice to meet you ✨
             </p>
             <p className="text-sm text-gray-500 dark:text-gray-400">
-              Just a few quick things and you'll be on your way. Promise it won't hurt...
-              much.
+              Just a few quick things and you'll be on your way. Promise it won't hurt... much.
             </p>
           </div>
 
@@ -99,9 +90,7 @@ function ByeBob({ job, company, onSubmit }: AtsSkinProps) {
           <div className="bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-2xl p-6 space-y-5 shadow-sm">
             <div className="flex items-center gap-2">
               <span className="text-xl">🙋</span>
-              <h2 className="text-base font-bold text-gray-800 dark:text-gray-100">
-                About You
-              </h2>
+              <h2 className="text-base font-bold text-gray-800 dark:text-gray-100">About You</h2>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -122,25 +111,17 @@ function ByeBob({ job, company, onSubmit }: AtsSkinProps) {
             </div>
 
             <FileUpload label="Drop your resume here ✨" required />
-            <TextInput
-              label="LinkedIn (optional)"
-              placeholder="https://linkedin.com/in/you"
-            />
+            <TextInput label="LinkedIn (optional)" placeholder="https://linkedin.com/in/you" />
           </div>
 
           {/* Section: Let's Chat */}
           <div className="bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-2xl p-6 space-y-5 shadow-sm">
             <div className="flex items-center gap-2">
               <span className="text-xl">💬</span>
-              <h2 className="text-base font-bold text-gray-800 dark:text-gray-100">
-                Let's Chat
-              </h2>
+              <h2 className="text-base font-bold text-gray-800 dark:text-gray-100">Let's Chat</h2>
             </div>
 
-            <TextArea
-              label="Anything else you'd like to share?"
-              rows={4}
-            />
+            <TextArea label="Anything else you'd like to share?" rows={4} />
 
             <p className="text-xs text-gray-400 dark:text-gray-500 italic">
               Bob reads every single message personally. (Bob is on sabbatical.)
